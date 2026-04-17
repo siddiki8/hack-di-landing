@@ -6,41 +6,46 @@ import { DonationWidget } from "./donation-widget"
 import { Heart } from "lucide-react"
 
 export function DonationSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   return (
-    <section id="donate" className="py-24 bg-deepgreen relative">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-deepgreen/80 via-deepgreen to-deepgreen/80" />
-
-      <div ref={ref} className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+    <section id="donate" className="py-24 bg-cream">
+      <div ref={ref} className="container mx-auto px-5 md:px-10">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4 }}
+          className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
-            Support <span className="text-gold">Hack DI</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Your donation helps us create an amazing hackathon experience for all participants.
-          </p>
-        </motion.div>
-
-        <motion.div
+          // donate
+        </motion.p>
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl mx-auto"
+          className="text-3xl md:text-4xl font-bold text-forest mb-4 tracking-tight"
         >
-          <div className="bg-deepgreen-50/10 backdrop-blur-sm p-6 rounded-lg border border-deepgreen-100">
-            <div className="flex items-center justify-center mb-6">
-              <Heart className="h-8 w-8 text-gold mr-2" />
-              <h3 className="text-xl font-bold">Make a Donation</h3>
+          Support Hack DI
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-forest/60 max-w-2xl mb-12"
+        >
+          Your donation helps us create an amazing hackathon experience for all participants.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="max-w-3xl"
+        >
+          <div className="border border-forest/10 p-6">
+            <div className="flex items-center gap-2 mb-6">
+              <Heart className="h-5 w-5 text-coral" />
+              <h3 className="text-lg font-bold text-forest">Make a Donation</h3>
             </div>
             <DonationWidget />
           </div>

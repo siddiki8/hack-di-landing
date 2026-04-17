@@ -3,8 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { ChevronDown } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { Plus, Minus } from "lucide-react"
 
 interface FaqItem {
   question: string
@@ -12,11 +11,7 @@ interface FaqItem {
 }
 
 export function FaqSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   const faqs: FaqItem[] = [
@@ -37,8 +32,7 @@ export function FaqSection() {
     },
     {
       question: "Is there a registration fee?",
-      answer:
-        "Yes, there is a fee of $10.00 so that you may reserve your spot.",
+      answer: "Yes, there is a fee of $10.00 so that you may reserve your spot.",
     },
     {
       question: "What kind of projects can I build?",
@@ -63,49 +57,69 @@ export function FaqSection() {
   ]
 
   return (
-    <section id="faq" className="py-24 bg-deepgreen relative">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-deepgreen/80 via-deepgreen to-deepgreen/80" />
-
-      <div ref={ref} className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+    <section id="faq" className="py-24 bg-cream">
+      <div ref={ref} className="container mx-auto px-5 md:px-10">
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.4 }}
+          className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
-            Frequently Asked <span className="text-gold">Questions</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">Everything you need to know about Hack DI.</p>
-        </motion.div>
+          // faq
+        </motion.p>
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-3xl md:text-4xl font-bold text-forest mb-4 tracking-tight"
+        >
+          Frequently Asked Questions
+        </motion.h2>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-forest/60 max-w-2xl mb-12"
+        >
+          Everything you need to know about Hack DI.
+        </motion.p>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-3xl">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="mb-4"
+              className="border-b border-forest/10 last:border-0"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full text-left p-4 bg-deepgreen-50/30 backdrop-blur-sm rounded-lg border border-deepgreen-100 hover:border-gold/50 transition-colors flex justify-between items-center"
+                className="w-full text-left py-5 flex justify-between items-start gap-4 group"
               >
-                <span className="font-medium">{faq.question}</span>
-                <ChevronDown
-                  className={cn(
-                    "h-5 w-5 text-gray-400 transition-transform duration-200",
-                    openIndex === index ? "transform rotate-180" : "",
-                  )}
-                />
+                <div className="flex items-start gap-4">
+                  <span className="font-mono text-xs text-coral mt-0.5 flex-shrink-0">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="font-medium text-forest group-hover:text-coral transition-colors">
+                    {faq.question}
+                  </span>
+                </div>
+                {openIndex === index ? (
+                  <Minus className="h-4 w-4 text-coral flex-shrink-0 mt-0.5" />
+                ) : (
+                  <Plus className="h-4 w-4 text-forest/40 group-hover:text-coral flex-shrink-0 mt-0.5 transition-colors" />
+                )}
               </button>
 
               {openIndex === index && (
-                <div className="p-4 bg-deepgreen-50/20 rounded-b-lg border-x border-b border-deepgreen-100 mt-px">
-                  <p className="text-gray-400">{faq.answer}</p>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  className="pb-5 pl-10"
+                >
+                  <p className="text-forest/60">{faq.answer}</p>
+                </motion.div>
               )}
             </motion.div>
           ))}

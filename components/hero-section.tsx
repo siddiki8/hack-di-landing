@@ -1,101 +1,121 @@
 "use client"
 
 import { useRef } from "react"
-import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
-import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
 
-  // Function to scroll to the about section
   const scrollToAbout = () => {
-    const aboutSection = document.getElementById("about")
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" })
-    }
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
-    <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden pt-16">
-      {/* Background elements */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px] z-0" />
-
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-deepgreen via-deepgreen-100/20 to-deepgreen animate-pulse opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-gold/10 via-transparent to-deepgreen/80" />
+    <section ref={heroRef} className="relative min-h-screen flex items-center bg-cream overflow-hidden pt-16">
+      {/* Floating hex/code ticker background */}
+      <div className="absolute inset-0 overflow-hidden opacity-[0.04] pointer-events-none select-none font-mono text-[10px] leading-6 text-forest break-all px-4">
+        {Array.from({ length: 300 }).map((_, i) => (
+          <span key={i}>{["0x1a3d", "ff4d3b", "hack()", "sudo ", "bash$ ", "def  ", "func ", "true ", "null ", "0xf5f"][i % 10]}{" "}</span>
+        ))}
       </div>
 
-      {/* Gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-deepgreen via-deepgreen/70 to-transparent z-[1]" />
-
-      {/* Content */}
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="max-w-xl">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-mono">
-              <span className="block text-gold">&lt;hack_DI/&gt;</span>
-              <span className="block">Learn. Build. Innovate.</span>
-            </h1>
+      <div className="container relative z-10 mx-auto px-5 md:px-10 py-24 md:py-32">
+        <div className="max-w-2xl">
+          {/* Terminal window */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="border border-forest/20 bg-white/60 backdrop-blur-sm mb-12"
+          >
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-forest/10 bg-forest/5">
+              <div className="w-3 h-3 rounded-full bg-coral/60" />
+              <div className="w-3 h-3 rounded-full bg-forest/30" />
+              <div className="w-3 h-3 rounded-full bg-forest/20" />
+              <span className="ml-2 font-mono text-[10px] text-forest/40 tracking-wider">bash — 80×24</span>
+            </div>
+            <div className="px-5 py-5 font-mono text-sm space-y-1">
+              <p className="text-forest/50">$ ./hack-di --init 2025</p>
+              <p className="text-terminal">✓ Participants loaded: <span className="text-forest">30+</span></p>
+              <p className="text-terminal">✓ Prize pool initialized: <span className="text-forest">$3,000</span></p>
+              <p className="text-terminal">✓ Mentors connected: <span className="text-forest">10+ orgs</span></p>
+              <p className="text-terminal">✓ Duration: <span className="text-forest">24 hours</span></p>
+              <p className="text-coral mt-2">Event completed successfully. <span className="animate-terminal-blink">▊</span></p>
+            </div>
           </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-mono text-4xl md:text-6xl font-bold tracking-tight text-forest mb-6"
+          >
+            Learn.{" "}
+            <span className="text-coral">Build.</span>{" "}
+            Innovate.
+          </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl text-gray-300 max-w-lg mt-6"
+            className="text-forest/70 text-lg max-w-xl mb-8"
           >
-            Darul Islah's first-ever hackathon was a huge success! Over 30 participants built amazing projects for the
-            Muslim community in just 24 hours.
+            Darul Islah's first-ever hackathon was a huge success. Over 30 participants built amazing projects for
+            the Muslim community in just 24 hours.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 mt-8"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4"
           >
-            {/* View Winners button */}
-            <div className="relative inline-block">
-              {/* Animated glow effect */}
-              <div className="absolute -inset-1 rounded-lg bg-gold/30 blur-md animate-breathing-glow"></div>
-
-              <Link href="/winners">
-                <Button
-                  size="lg"
-                  className={cn(
-                    "relative bg-gold hover:bg-gold-600 text-black font-medium",
-                    "shadow-[0_0_10px_rgba(225,186,67,0.3)] hover:shadow-[0_0_20px_rgba(225,186,67,0.5)]",
-                    "transition-all duration-300 ease-in-out",
-                  )}
-                >
-                  View Winners <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
-
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-deepgreen-200 hover:bg-deepgreen-100 bg-transparent"
+            <Link
+              href="/winners"
+              className="inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
+            >
+              View Winners <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+            <button
               onClick={scrollToAbout}
+              className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
             >
               Learn More
-            </Button>
+            </button>
           </motion.div>
 
-          <motion.div
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-sm text-gray-400 mt-6"
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="font-mono text-xs text-forest/40 mt-8 tracking-wider"
           >
-            June 28-29, 2025 • Darul Islah Community Center • ✅ Completed Successfully
-          </motion.div>
+            // June 28–29, 2025 · Darul Islah Community Center · Completed Successfully
+          </motion.p>
         </div>
+
+        {/* Stats strip */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="mt-20 flex flex-wrap gap-8 border-t border-forest/10 pt-8"
+        >
+          {[
+            { value: "24h", label: "Duration" },
+            { value: "$3k", label: "Prize Pool" },
+            { value: "30+", label: "Participants" },
+            { value: "10+", label: "Mentor Orgs" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="font-mono text-2xl font-bold text-forest">{stat.value}</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-forest/50">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   )

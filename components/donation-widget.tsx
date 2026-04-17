@@ -11,10 +11,9 @@ export function DonationWidget({ className }: DonationWidgetProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
 
   useEffect(() => {
-    // Adjust iframe height based on content if needed
     const handleResize = () => {
       if (iframeRef.current) {
-        // You can add message listener here if the donation platform supports postMessage
+        // postMessage handler can be added here if the donation platform supports it
       }
     }
 
@@ -23,7 +22,7 @@ export function DonationWidget({ className }: DonationWidgetProps) {
   }, [])
 
   return (
-    <div className={cn("w-full rounded-lg overflow-hidden shadow-lg", className)}>
+    <div className={cn("w-full overflow-hidden", className)}>
       <iframe
         ref={iframeRef}
         src="https://donation.masjidal.com/DarulIslah/campaign/hackathon/"

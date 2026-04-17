@@ -3,10 +3,6 @@
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import {
-  Code,
-  Users,
-  Lightbulb,
-  Trophy,
   Network,
   FileText,
   GraduationCap,
@@ -14,162 +10,119 @@ import {
   ShoppingBag,
   Building2,
   User,
+  Users,
   Shield,
   DollarSign,
 } from "lucide-react"
 
 export function AboutSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
-
-  const [featuresRef, featuresInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  })
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
+  const [featuresRef, featuresInView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
   const features = [
-    {
-      icon: <Code className="h-10 w-10 text-gold" />,
-      title: "Code",
-      description: "Build innovative solutions using cutting-edge technologies.",
-    },
-    {
-      icon: <Users className="h-10 w-10 text-gold" />,
-      title: "Collaborate",
-      description: "Work with talented developers, designers, and entrepreneurs.",
-    },
-    {
-      icon: <Lightbulb className="h-10 w-10 text-gold" />,
-      title: "Create",
-      description: "Turn your ideas into reality with mentorship and resources.",
-    },
-    {
-      icon: <Trophy className="h-10 w-10 text-gold" />,
-      title: "Compete",
-      description: "Win prizes and recognition for your innovative solutions.",
-    },
+    { num: "01", title: "Code", description: "Build innovative solutions using cutting-edge technologies." },
+    { num: "02", title: "Collaborate", description: "Work with talented developers, designers, and entrepreneurs." },
+    { num: "03", title: "Create", description: "Turn your ideas into reality with mentorship and resources." },
+    { num: "04", title: "Compete", description: "Win prizes and recognition for your innovative solutions." },
   ]
 
   const hackathonBenefits = [
-    {
-      icon: <DollarSign className="h-8 w-8" />,
-      title: "Prize Pool",
-      description: "$3,000",
-      highlight: true,
-    },
-    {
-      icon: <Network className="h-8 w-8" />,
-      title: "Mentor Networking",
-      description: "Connect with industry professionals",
-    },
-    {
-      icon: <FileText className="h-8 w-8" />,
-      title: "Resume Support",
-      description: "Get feedback on your resume",
-    },
-    {
-      icon: <GraduationCap className="h-8 w-8" />,
-      title: "Technical Instruction",
-      description: "Learn from expert-led workshops",
-    },
-    {
-      icon: <Briefcase className="h-8 w-8" />,
-      title: "Portfolio Project",
-      description: "Build something for your resume",
-    },
-    {
-      icon: <ShoppingBag className="h-8 w-8" />,
-      title: "Swag",
-      description: "Take home exclusive hackathon merchandise",
-    },
-    {
-      icon: <Building2 className="h-8 w-8" />,
-      title: "Corporate Sponsors",
-      description: "Backed by leading tech companies",
-    },
-    {
-      icon: <User className="h-8 w-8" />,
-      title: "Recruitment Opportunities",
-      description: "Get noticed by potential employers",
-    },
-    {
-      icon: <Users className="h-8 w-8" />,
-      title: "Sisters Accommodations",
-      description: "Women mentors, chaperones, and sister-only spaces",
-    },
+    { icon: <DollarSign className="h-5 w-5" />, title: "Prize Pool", description: "$3,000", highlight: true },
+    { icon: <Network className="h-5 w-5" />, title: "Mentor Networking", description: "Connect with industry professionals" },
+    { icon: <FileText className="h-5 w-5" />, title: "Resume Support", description: "Get feedback on your resume" },
+    { icon: <GraduationCap className="h-5 w-5" />, title: "Technical Instruction", description: "Learn from expert-led workshops" },
+    { icon: <Briefcase className="h-5 w-5" />, title: "Portfolio Project", description: "Build something for your resume" },
+    { icon: <ShoppingBag className="h-5 w-5" />, title: "Swag", description: "Take home exclusive hackathon merchandise" },
+    { icon: <Building2 className="h-5 w-5" />, title: "Corporate Sponsors", description: "Backed by leading tech companies" },
+    { icon: <User className="h-5 w-5" />, title: "Recruitment Opportunities", description: "Get noticed by potential employers" },
+    { icon: <Users className="h-5 w-5" />, title: "Sisters Accommodations", description: "Women mentors, chaperones, and sister-only spaces" },
   ]
 
   return (
-    <section id="about" className="py-24 bg-deepgreen relative">
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-deepgreen/80 via-deepgreen to-deepgreen/80" />
-
-      <div ref={ref} className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
-            About <span className="text-gold">hack_DI</span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+    <section id="about" className="bg-cream">
+      {/* Dark forest mission band */}
+      <div ref={ref} className="bg-forest py-24">
+        <div className="container mx-auto px-5 md:px-10">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4 }}
+            className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4"
+          >
+            // about
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-cream mb-6 tracking-tight"
+          >
+            About hack_DI
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-cream/70 max-w-2xl text-lg"
+          >
             Hack DI is a 24-hour hackathon at Darul Islah where participants collaborate to build innovative solutions
             to real-world problems. Whether you're a seasoned developer or just starting out, Hack DI provides the
             perfect platform to learn, create, and connect.
-          </p>
-        </motion.div>
+          </motion.p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-deepgreen-50/30 backdrop-blur-sm p-6 rounded-lg border border-deepgreen-100 hover:border-gold/50 transition-colors"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-gray-400">{feature.description}</p>
-            </motion.div>
-          ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px mt-16 border border-cream/10">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-forest-600 p-8 border border-cream/10 hover:bg-forest-500 transition-colors"
+              >
+                <p className="font-mono text-coral text-sm mb-4">{feature.num}</p>
+                <h3 className="text-cream text-xl font-bold mb-2">{feature.title}</h3>
+                <p className="text-cream/60 text-sm">{feature.description}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </div>
 
-        {/* Hackathon Benefits Section */}
-        <div ref={featuresRef} className="mt-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-            transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+      {/* Benefits grid */}
+      <div ref={featuresRef} className="py-24">
+        <div className="container mx-auto px-5 md:px-10">
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4 }}
+            className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
-              What You'll <span className="text-gold">Get</span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Hack DI offers more than just a coding competition. Here's what you can expect:
-            </p>
-          </motion.div>
+            // benefits
+          </motion.p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-3xl md:text-4xl font-bold text-forest mb-12 tracking-tight"
+          >
+            What You'll Get
+          </motion.h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {hackathonBenefits.map((benefit, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
-                animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                animate={featuresInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="bg-deepgreen-50/20 backdrop-blur-sm p-6 rounded-lg border border-deepgreen-100 hover:border-gold/50 transition-colors flex items-start"
+                className="flex items-start gap-4 p-6 border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-colors"
               >
-                <div className={`mr-4 p-3 rounded-full ${benefit.highlight ? "bg-gold/20" : "bg-deepgreen-100/30"}`}>
+                <div className={`p-2 flex-shrink-0 ${benefit.highlight ? "bg-coral/10 text-coral" : "bg-forest/10 text-forest"}`}>
                   {benefit.icon}
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold mb-1">{benefit.title}</h3>
-                  <p className={`${benefit.highlight ? "text-gold text-2xl font-bold" : "text-gray-400"}`}>
+                  <h3 className="font-semibold text-forest mb-1">{benefit.title}</h3>
+                  <p className={benefit.highlight ? "text-coral text-xl font-bold font-mono" : "text-forest/60 text-sm"}>
                     {benefit.description}
                   </p>
                 </div>
@@ -177,32 +130,19 @@ export function AboutSection() {
             ))}
           </div>
 
-          {/* Security Note */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={featuresInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+            animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-8 bg-deepgreen-50/10 backdrop-blur-sm p-4 rounded-lg border border-deepgreen-100 flex items-center"
+            className="mt-6 flex items-center gap-3 p-4 border border-forest/10 bg-forest/5"
           >
-            <Shield className="h-5 w-5 text-gold mr-3 flex-shrink-0" />
-            <p className="text-sm text-gray-400">
-              <span className="font-medium">Your safety is our priority:</span> We provide paid security personnel
-              overnight for all participants.
+            <Shield className="h-4 w-4 text-forest flex-shrink-0" />
+            <p className="text-sm text-forest/70">
+              <span className="font-semibold text-forest">Your safety is our priority:</span> We provide paid security
+              personnel overnight for all participants.
             </p>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mt-16 text-center"
-        >
-          <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            Join us for an unforgettable weekend of innovation, learning, and fun. No matter your skill level, there's a
-            place for you at Hack DI.
-          </p>
-        </motion.div>
       </div>
     </section>
   )
