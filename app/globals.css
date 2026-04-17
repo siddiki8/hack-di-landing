@@ -4,48 +4,62 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 43 73% 57%; /* Gold #e1ba43 */
-    --primary-foreground: 0 0% 0%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 43 73% 57%; /* Gold #e1ba43 */
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 43 73% 57%; /* Gold #e1ba43 */
-    --radius: 0.5rem;
+    /* Cream background + forest-green text */
+    --background: 37 41% 93%; /* #f5f0e8 cream */
+    --foreground: 144 40% 17%; /* #1a3d2b forest */
+
+    --card: 37 41% 93%;
+    --card-foreground: 144 40% 17%;
+
+    --popover: 37 41% 93%;
+    --popover-foreground: 144 40% 17%;
+
+    /* Forest-green primary (buttons default to forest, flip to coral on hover) */
+    --primary: 144 40% 17%;
+    --primary-foreground: 37 41% 93%;
+
+    --secondary: 37 30% 88%;
+    --secondary-foreground: 144 40% 17%;
+
+    --muted: 37 30% 88%;
+    --muted-foreground: 144 20% 30%;
+
+    /* Coral accent */
+    --accent: 6 100% 62%;
+    --accent-foreground: 37 41% 93%;
+
+    --destructive: 6 100% 62%;
+    --destructive-foreground: 37 41% 93%;
+
+    --border: 144 40% 17%;
+    --input: 144 40% 17%;
+    --ring: 6 100% 62%;
+
+    /* Square corners to match the terminal/brutalist brand */
+    --radius: 0px;
   }
 
   .dark {
-    --background: 196 55% 4%; /* Deep green #040D0E */
-    --foreground: 0 0% 95%;
-    --card: 196 55% 3%;
-    --card-foreground: 0 0% 95%;
-    --popover: 196 55% 2%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 43 73% 57%; /* Gold #e1ba43 */
-    --primary-foreground: 0 0% 0%;
-    --secondary: 196 55% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 196 55% 10%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 43 73% 57%; /* Gold #e1ba43 */
-    --accent-foreground: 0 0% 0%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 85.7% 97.3%;
-    --border: 196 55% 12%;
-    --input: 196 55% 12%;
-    --ring: 43 73% 57%; /* Gold #e1ba43 */
+    /* Dark variant uses the deep forest background with cream text */
+    --background: 144 50% 10%; /* #0d2618 forest-deep */
+    --foreground: 37 41% 93%;
+    --card: 144 50% 10%;
+    --card-foreground: 37 41% 93%;
+    --popover: 144 50% 10%;
+    --popover-foreground: 37 41% 93%;
+    --primary: 6 100% 62%;
+    --primary-foreground: 37 41% 93%;
+    --secondary: 144 40% 17%;
+    --secondary-foreground: 37 41% 93%;
+    --muted: 144 40% 17%;
+    --muted-foreground: 37 15% 75%;
+    --accent: 6 100% 62%;
+    --accent-foreground: 37 41% 93%;
+    --destructive: 6 100% 62%;
+    --destructive-foreground: 37 41% 93%;
+    --border: 37 41% 93%;
+    --input: 37 41% 93%;
+    --ring: 6 100% 62%;
   }
 }
 
@@ -55,6 +69,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv11";
   }
 }
 
@@ -62,14 +77,15 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  @apply dark;
+.font-mono {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.font-mono {
-  font-family: var(--font-geist-mono), monospace;
+/* Terminal-style section label: `// section-name` */
+.section-label {
+  @apply font-mono text-xs uppercase tracking-[0.3em] text-coral;
 }
 
 .section-title {
-  @apply font-mono tracking-tight;
+  @apply font-bold tracking-tight text-forest;
 }
