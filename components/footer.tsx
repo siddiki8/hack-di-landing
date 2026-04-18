@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Instagram } from "lucide-react"
+import { Camera } from "lucide-react"
 
 export function Footer() {
   return (
@@ -23,7 +23,7 @@ export function Footer() {
               href="https://instagram.com/hackdarulislah"
               className="inline-flex items-center gap-2 text-cream/50 hover:text-coral transition-colors"
             >
-              <Instagram className="h-4 w-4" />
+              <Camera className="h-4 w-4" />
               <span className="font-mono text-xs">@hackdarulislah</span>
             </Link>
           </div>

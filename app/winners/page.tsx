@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import Link from "next/link"
-import { Trophy, Medal, Award, ExternalLink, Users, MapPin, Calendar, DollarSign, Heart, Instagram, ArrowRight, ArrowLeft } from "lucide-react"
+import { Trophy, Medal, Award, ExternalLink, Users, MapPin, Calendar, DollarSign, Heart, Camera, ArrowRight, ArrowLeft } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
@@ -252,7 +252,7 @@ export default function WinnersPage() {
                 </span>
               </div>
               <div className="p-6 flex flex-col items-center text-center">
-                <Instagram className="h-10 w-10 text-coral mb-4" />
+                <Camera className="h-10 w-10 text-coral mb-4" />
                 <p className="text-forest font-medium mb-2">Catch the full recap on Instagram</p>
                 <p className="text-forest/60 text-sm mb-6">
                   Reels, photos, and shout-outs to the 2025 teams.
@@ -263,7 +263,7 @@ export default function WinnersPage() {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 bg-forest px-6 h-11 font-mono text-xs uppercase tracking-wider text-cream hover:bg-coral transition-colors"
                 >
-                  <Instagram className="h-4 w-4" />
+                  <Camera className="h-4 w-4" />
                   Follow @hackdarulislah
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>

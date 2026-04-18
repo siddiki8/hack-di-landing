@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ArrowLeft, ArrowRight, Clock, Instagram } from "lucide-react"
+import { ArrowLeft, ArrowRight, Clock, Camera } from "lucide-react"
 
 export const metadata = {
   title: "Register | Hack DI 2026",
@@ -71,7 +71,7 @@ export default function RegisterPage() {
                   href="https://instagram.com/hackdarulislah"
                   className="text-coral hover:underline inline-flex items-center gap-1 ml-1"
                 >
-                  <Instagram className="h-4 w-4" /> @hackdarulislah
+                  <Camera className="h-4 w-4" /> @hackdarulislah
                 </a>{" "}
                 <span className="ml-1">for updates</span>
               </p>
