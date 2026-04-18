@@ -1,93 +1,90 @@
-"use client"
-
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Instagram } from "lucide-react"
-import { useEffect } from "react"
+import { ArrowLeft, ArrowRight, Clock, Instagram } from "lucide-react"
+
+export const metadata = {
+  title: "Register | Hack DI 2026",
+  description: "Registration for Hack DI 2026 opens soon. Stay tuned.",
+}
 
 export default function RegisterPage() {
-  // This useEffect is needed to ensure the iframe script loads properly
-  useEffect(() => {
-    // If there are any scripts that need to be loaded for the iframe, they can be added here
-    // For most iframes this isn't necessary, but it's good practice for complex embeds
-  }, [])
-
   return (
-    <div className="min-h-screen bg-deepgreen text-white flex flex-col">
+    <div className="min-h-screen bg-cream text-forest flex flex-col">
       <Navbar />
 
-      <main className="flex-grow flex items-center justify-center relative">
-        {/* Background grid */}
-        <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
-
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-deepgreen/80 via-deepgreen to-deepgreen/80" />
-
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center font-mono">
-              Register for <span className="text-gold">Hack DI</span>
+      <main className="flex-grow flex items-center justify-center relative pt-16">
+        <div className="container relative z-10 mx-auto px-5 md:px-10 py-24">
+          <div className="max-w-3xl mx-auto">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4 text-center">
+              // register
+            </p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center font-mono text-forest tracking-tight">
+              Registration <span className="text-coral">Coming Soon</span>
             </h1>
-
-            <div className="h-px w-24 bg-gold/50 mx-auto my-8"></div>
-
-            <p className="text-xl text-gray-300 mb-12 text-center">
-              Secure your spot for an unforgettable weekend of innovation, learning, and collaboration.
+            <p className="text-forest/60 text-center max-w-xl mx-auto mb-12">
+              Hack DI 2026 hits the terminal on September 12–13. We're still wiring up the registration flow —
+              check back soon or get pinged when it's live.
             </p>
 
-            <div className="bg-deepgreen-50/10 backdrop-blur-sm p-6 rounded-lg border border-deepgreen-100 mb-8">
-              {/* Zeffy Registration Form */}
-              <div style={{ position: "relative", overflow: "hidden", width: "100%", height: "600px" }}>
-                <iframe
-                  title="Hack DI Registration Form"
-                  style={{
-                    position: "absolute",
-                    border: 0,
-                    top: 0,
-                    left: 0,
-                    bottom: 0,
-                    right: 0,
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  src="https://www.zeffy.com/embed/ticketing/di-hackathon--2025"
-                  allowPaymentRequest
-                  allowTransparency={true}
-                ></iframe>
+            <div className="border border-forest/10 bg-white/60 backdrop-blur-sm p-10 mb-8">
+              <div className="flex items-center gap-2 mb-6">
+                <Clock className="h-5 w-5 text-coral" />
+                <p className="font-mono text-xs uppercase tracking-wider text-coral">
+                  // status: pending · September 12–13, 2026
+                </p>
+              </div>
+
+              <div className="font-mono text-sm text-forest/80 space-y-1 mb-8 border-l-2 border-coral/40 pl-4">
+                <p className="text-forest/50">$ hack-di register --year=2026</p>
+                <p className="text-forest/60">[WAIT] registration endpoint not yet deployed</p>
+                <p className="text-forest/60">[INFO] estimated launch: soon™</p>
+                <p className="text-coral">[HINT] star us on instagram to catch the drop</p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/winners"
+                  className="group inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
+                >
+                  See 2025 Recap <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+                <a
+                  href="mailto:hackathon@darulislah.org"
+                  className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
+                >
+                  Email to Get Notified
+                </a>
               </div>
             </div>
 
-            <div className="flex justify-center mt-8">
-              <Link href="/">
-                <Button
-                  variant="ghost"
-                  className="text-gray-300 hover:text-white hover:bg-deepgreen-100/20 flex items-center gap-2"
-                >
-                  <ArrowLeft className="h-4 w-4" />
-                  Back to Home
-                </Button>
-              </Link>
-            </div>
-
-            <div className="mt-12 text-sm text-gray-400 text-center">
+            <div className="text-sm text-forest/50 text-center space-y-2">
               <p>
-                Have questions? Contact us at{" "}
-                <a href="mailto:hackathon@darulislah.org" className="text-gold hover:underline">
+                Questions?{" "}
+                <a href="mailto:hackathon@darulislah.org" className="text-coral hover:underline">
                   hackathon@darulislah.org
                 </a>
               </p>
-              <p className="mt-2">
-                Follow us on{" "}
+              <p className="inline-flex items-center gap-1">
+                Follow{" "}
                 <a
                   href="https://instagram.com/hackdarulislah"
-                  className="text-gold hover:underline flex items-center gap-1 inline-flex"
+                  className="text-coral hover:underline inline-flex items-center gap-1 ml-1"
                 >
-                  <Instagram className="h-4 w-4" /> Instagram
+                  <Instagram className="h-4 w-4" /> @hackdarulislah
                 </a>{" "}
-                for updates
+                <span className="ml-1">for updates</span>
               </p>
+            </div>
+
+            <div className="flex justify-center mt-10">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-forest/60 hover:text-coral transition-colors"
+              >
+                <ArrowLeft className="h-4 w-4" />
+                Back to Home
+              </Link>
             </div>
           </div>
         </div>

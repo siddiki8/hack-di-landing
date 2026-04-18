@@ -1,5 +1,16 @@
+import path from "path"
+import { fileURLToPath } from "url"
+
+const workspaceRoot = path.dirname(fileURLToPath(import.meta.url))
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  experimental: {
+    optimizePackageImports: ["lucide-react"],
+  },
+  turbopack: {
+    root: workspaceRoot,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -7,7 +18,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',

@@ -27,7 +27,7 @@ export function AboutSection() {
   ]
 
   const hackathonBenefits = [
-    { icon: <DollarSign className="h-5 w-5" />, title: "Prize Pool", description: "$3,000", highlight: true },
+    { icon: <DollarSign className="h-5 w-5" />, title: "Prize Pool", description: "$???", highlight: true },
     { icon: <Network className="h-5 w-5" />, title: "Mentor Networking", description: "Connect with industry professionals" },
     { icon: <FileText className="h-5 w-5" />, title: "Resume Support", description: "Get feedback on your resume" },
     { icon: <GraduationCap className="h-5 w-5" />, title: "Technical Instruction", description: "Learn from expert-led workshops" },

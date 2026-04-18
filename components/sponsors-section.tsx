@@ -8,7 +8,7 @@ import { EyeOff, ExternalLink } from "lucide-react"
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 
-const BLUR_SPONSORS = false
+const BLUR_SPONSORS = true
 
 export function SponsorsSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -67,6 +67,7 @@ export function SponsorsSection() {
                     alt={sponsor.name}
                     width={280}
                     height={140}
+                    sizes="(max-width: 640px) 80vw, 280px"
                     className="object-contain opacity-80 hover:opacity-100 transition-opacity"
                   />
                 </motion.div>

@@ -2,8 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { DonationWidget } from "./donation-widget"
-import { Heart } from "lucide-react"
+import { Heart, ExternalLink } from "lucide-react"
 
 export function DonationSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -42,12 +41,23 @@ export function DonationSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-3xl"
         >
-          <div className="border border-forest/10 p-6">
-            <div className="flex items-center gap-2 mb-6">
+          <div className="border border-forest/10 p-8">
+            <div className="flex items-center gap-2 mb-4">
               <Heart className="h-5 w-5 text-coral" />
               <h3 className="text-lg font-bold text-forest">Make a Donation</h3>
             </div>
-            <DonationWidget />
+            <p className="text-forest/60 text-sm mb-6 max-w-xl">
+              Donations are processed through Darul Islah, a 501(c)(3) nonprofit. All contributions are
+              tax-deductible and directly fund the hackathon.
+            </p>
+            <a
+              href="https://www.darulislah.org/donate/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
+            >
+              Donate via darulislah.org <ExternalLink className="ml-2 h-4 w-4" />
+            </a>
           </div>
         </motion.div>
       </div>

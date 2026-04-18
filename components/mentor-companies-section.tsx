@@ -76,6 +76,8 @@ export function MentorCompaniesSection() {
                     alt={`${company.name} logo`}
                     width={140}
                     height={70}
+                    sizes="(max-width: 640px) 40vw, (max-width: 768px) 30vw, 140px"
+                    loading="lazy"
                     className="object-contain max-h-14 opacity-70 hover:opacity-100 transition-opacity"
                   />
                 </motion.div>

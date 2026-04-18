@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Clock } from "lucide-react"
 import Link from "next/link"
 
 export function RegisterSection() {
@@ -27,7 +27,7 @@ export function RegisterSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-cream mb-6 tracking-tight"
           >
-            Hack DI 2025 Complete!
+            Registration Opening Soon
           </motion.h2>
 
           <motion.div
@@ -36,23 +36,34 @@ export function RegisterSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="border border-cream/10 p-10"
           >
-            <h3 className="text-xl font-bold text-cream mb-4">Alhamdulillah for a Successful Event!</h3>
+            <div className="flex items-center gap-2 mb-4">
+              <Clock className="h-5 w-5 text-coral" />
+              <p className="font-mono text-xs uppercase tracking-wider text-coral">// status: pending</p>
+            </div>
+
+            <h3 className="text-xl font-bold text-cream mb-4">September 12–13, 2026 · Teaneck, NJ</h3>
             <p className="text-cream/70 mb-8 max-w-xl">
-              Over 30 participants from multiple states came together to build innovative solutions for the Muslim
-              community. Check out the amazing winning projects and stay connected for future hackathons!
+              We're finalizing the details for Hack DI 2026. Registration, team formation, and mentor applications
+              will go live soon — drop us a line or follow along on Instagram to catch the launch.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/winners"
-                className="inline-flex items-center justify-center h-11 bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral/80"
+                className="group inline-flex items-center justify-center h-11 bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral/80"
               >
-                View Winners <ArrowRight className="ml-2 h-4 w-4" />
+                Relive 2025 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
+              <a
+                href="mailto:hackathon@darulislah.org"
+                className="inline-flex items-center justify-center h-11 border border-cream/30 px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:border-coral hover:text-coral"
+              >
+                Get Notified
+              </a>
             </div>
 
             <p className="text-cream/40 text-sm mt-8">
-              Interested in future events?{" "}
+              Questions?{" "}
               <a href="mailto:hackathon@darulislah.org" className="text-coral hover:underline">
                 hackathon@darulislah.org
               </a>

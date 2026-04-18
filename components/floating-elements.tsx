@@ -24,8 +24,13 @@ export function FloatingElements() {
   const [elements, setElements] = useState<FloatingElement[]>([])
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Generate random elements
+  // Generate random elements — fewer on mobile, none on reduced-motion
   useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    if (prefersReduced) return
+
+    const mobile = window.matchMedia("(max-width: 767px)").matches
+
     const icons = [
       <Code key="code" />,
       <Terminal key="terminal" />,
@@ -48,8 +53,9 @@ export function FloatingElements() {
 
     const newElements: FloatingElement[] = []
 
-    // Generate 6 icon elements
-    for (let i = 0; i < 6; i++) {
+    // Generate icon elements (fewer on mobile)
+    const iconCount = mobile ? 3 : 6
+    for (let i = 0; i < iconCount; i++) {
       newElements.push({
         id: i,
         type: "icon",
@@ -63,10 +69,11 @@ export function FloatingElements() {
       })
     }
 
-    // Generate 8 code elements
-    for (let i = 0; i < 8; i++) {
+    // Generate code elements (fewer on mobile)
+    const codeCount = mobile ? 4 : 8
+    for (let i = 0; i < codeCount; i++) {
       newElements.push({
-        id: i + 6,
+        id: i + iconCount,
         type: "code",
         x: Math.random() * 100,
         y: Math.random() * 100,
@@ -78,10 +85,11 @@ export function FloatingElements() {
       })
     }
 
-    // Generate 20 particle elements
-    for (let i = 0; i < 20; i++) {
+    // Generate particle elements (fewer on mobile)
+    const particleCount = mobile ? 8 : 20
+    for (let i = 0; i < particleCount; i++) {
       newElements.push({
-        id: i + 14,
+        id: i + iconCount + codeCount,
         type: "particle",
         x: Math.random() * 100,
         y: Math.random() * 100,

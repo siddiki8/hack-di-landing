@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -11,7 +12,7 @@ const navLinks = [
   { href: "#schedule", label: "Schedule" },
   { href: "#sponsors", label: "Sponsors" },
   { href: "#faq", label: "FAQ" },
-  { href: "/winners", label: "Winners" },
+  { href: "/winners", label: "2025 Recap" },
   { href: "/sponsor-info", label: "Sponsor Info" },
 ]
 
@@ -20,8 +21,17 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10)
-    window.addEventListener("scroll", handleScroll)
+    let ticking = false
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 10)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -35,14 +45,30 @@ export function Navbar() {
       )}
     >
       <div className="flex items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <Link href="/" className="flex items-center gap-2">
-          <span className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-forest">
-            darul_islah
-          </span>
-          <span className="font-mono text-sm font-semibold text-coral">
-            .hack()
-          </span>
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/hackdilogo.png"
+              alt="Hack DI"
+              width={32}
+              height={32}
+              priority
+              className="h-8 w-8 object-contain"
+            />
+            <span className="flex items-baseline font-mono">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-forest">
+                darul_islah
+              </span>
+              <span className="text-sm font-semibold text-coral">.hack()</span>
+            </span>
+          </Link>
+          <Link
+            href="/winners"
+            className="group hidden sm:inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.2em] text-coral border-l border-forest/20 pl-4 hover:text-coral/80 transition-colors"
+          >
+            <span className="opacity-60 group-hover:opacity-100">&gt;</span> 2025 recap
+          </Link>
+        </div>
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.slice(0, 4).map((link) => (
@@ -87,7 +113,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-2 font-mono text-xs uppercase tracking-wider text-forest/80 hover:text-coral"
+                  className="block py-3 font-mono text-xs uppercase tracking-wider text-forest/80 hover:text-coral active:text-coral"
                 >
                   {link.label}
                 </Link>

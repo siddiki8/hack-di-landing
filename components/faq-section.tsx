@@ -32,7 +32,7 @@ export function FaqSection() {
     },
     {
       question: "Is there a registration fee?",
-      answer: "Yes, there is a fee of $10.00 so that you may reserve your spot.",
+      answer: "Yes, there is a fee of $20.00 so that you may reserve your spot.",
     },
     {
       question: "What kind of projects can I build?",
