@@ -27,7 +27,7 @@ export default function RegisterPage() {
               check back soon or get pinged when it's live.
             </p>
 
-            <div className="border border-forest/10 bg-white/60 backdrop-blur-sm p-10 mb-8">
+            <div className="surface-shadow mb-8 border border-forest/10 bg-white/60 p-10 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-6">
                 <Clock className="h-5 w-5 text-coral" />
                 <p className="font-mono text-xs uppercase tracking-wider text-coral">

@@ -75,7 +75,7 @@ export default function WinnersPage() {
             </p>
 
             {/* Terminal */}
-            <div className="border border-forest/20 bg-white/70 backdrop-blur-sm max-w-2xl">
+            <div className="surface-shadow-coral max-w-2xl border border-forest/20 bg-white/70 backdrop-blur-sm">
               <div className="flex items-center gap-2 px-4 py-2 border-b border-forest/10 bg-forest/5">
                 <div className="w-3 h-3 rounded-full bg-coral/60" />
                 <div className="w-3 h-3 rounded-full bg-forest/30" />
@@ -128,7 +128,7 @@ export default function WinnersPage() {
               {winners.map((w, i) => (
                 <div
                   key={w.place}
-                  className="border border-forest/15 bg-white/50 backdrop-blur-sm hover:border-coral/40 transition-colors"
+                  className="surface-shadow border border-forest/15 bg-white/50 backdrop-blur-sm transition-colors hover:border-coral/40"
                 >
                   <div className="flex items-center justify-between px-5 py-2 border-b border-forest/10 bg-forest/5">
                     <div className="flex items-center gap-3 text-forest/60 font-mono text-[11px] tracking-wider">
@@ -209,7 +209,7 @@ export default function WinnersPage() {
                   body: "One sprint, one ummah-first mission, one incredible closing ceremony.",
                 },
               ].map((h) => (
-                <div key={h.num} className="border border-forest/10 bg-cream p-8 hover:bg-white transition-colors">
+                <div key={h.num} className="surface-shadow-sm border border-forest/10 bg-cream p-8 transition-colors hover:bg-white">
                   <p className="font-mono text-coral text-sm mb-4">{h.num}</p>
                   <div className="flex items-center gap-2 text-forest mb-3">
                     {h.icon}
@@ -220,7 +220,7 @@ export default function WinnersPage() {
               ))}
             </div>
 
-            <div className="mt-10 border border-forest/10 bg-cream p-8">
+            <div className="surface-shadow-sm mt-10 border border-forest/10 bg-cream p-8">
               <p className="text-forest/70 leading-relaxed max-w-3xl">
                 Participants were given 24 hours to build innovative projects aimed at benefiting the Muslim
                 community. The skill level varied from beginners to experienced coders — and it was inspiring to
@@ -242,7 +242,7 @@ export default function WinnersPage() {
               Photos, post-mortems, and team shout-outs from that weekend.
             </p>
 
-            <div className="border border-forest/20 bg-white/60 backdrop-blur-sm max-w-xl mx-auto">
+            <div className="surface-shadow mx-auto max-w-xl border border-forest/20 bg-white/60 backdrop-blur-sm">
               <div className="flex items-center gap-2 px-4 py-2 border-b border-forest/10 bg-forest/5">
                 <div className="w-3 h-3 rounded-full bg-coral/60" />
                 <div className="w-3 h-3 rounded-full bg-forest/30" />

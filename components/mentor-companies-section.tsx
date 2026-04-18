@@ -59,7 +59,7 @@ export function MentorCompaniesSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="border border-forest/10 p-8 relative overflow-hidden"
+          className="surface-shadow relative overflow-hidden border border-forest/10 bg-white/60 p-8"
         >
           <div className={cn("transition-all duration-500", isBlurred ? "blur-md select-none" : "")}>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">

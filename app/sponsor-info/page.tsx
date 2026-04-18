@@ -113,7 +113,7 @@ export default function SponsorInfoPage() {
             </p>
 
             {/* Why sponsor card */}
-            <div className="border border-forest/20 bg-white/70 max-w-xl mb-14">
+            <div className="surface-shadow mb-14 max-w-xl border border-forest/20 bg-white/70">
               <div className="px-6 py-4 border-b border-forest/10 bg-forest/5">
                 <p className="text-xs font-semibold uppercase tracking-widest text-forest/60">
                   Why sponsor Hack DI?
@@ -174,7 +174,7 @@ export default function SponsorInfoPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-forest mb-10 tracking-tight">
               What to Expect
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-forest/10 border border-forest/10">
+            <div className="surface-shadow grid grid-cols-1 gap-px border border-forest/10 bg-forest/10 sm:grid-cols-2 lg:grid-cols-4">
               {eventDetails.map((s) => (
                 <div key={s.label} className="bg-cream p-6">
                   <div className="flex items-center gap-2 text-coral mb-3">
@@ -208,8 +208,8 @@ export default function SponsorInfoPage() {
                   key={t.name}
                   className={`relative border bg-cream flex flex-col ${
                     t.featured
-                      ? "border-coral shadow-[4px_4px_0_0] shadow-coral/20"
-                      : "border-forest/15"
+                      ? "surface-shadow-coral border-coral"
+                      : "surface-shadow border-forest/15"
                   }`}
                 >
                   {t.featured && (
@@ -250,7 +250,7 @@ export default function SponsorInfoPage() {
         {/* Contact */}
         <section className="py-24">
           <div className="container mx-auto px-5 md:px-10">
-            <div className="border border-forest/15 bg-white/60 p-8 md:p-12 max-w-2xl">
+            <div className="surface-shadow max-w-2xl border border-forest/15 bg-white/60 p-8 md:p-12">
               <p className="text-xs font-semibold uppercase tracking-widest text-coral mb-4">
                 Get in Touch
               </p>

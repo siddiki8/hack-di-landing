@@ -77,7 +77,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-forest-600 p-8 border border-cream/10 hover:bg-forest-500 transition-colors"
+                className="surface-shadow-sm-coral border border-cream/10 bg-forest-600 p-8 transition-colors hover:bg-forest-500"
               >
                 <p className="font-mono text-coral text-sm mb-4">{feature.num}</p>
                 <h3 className="text-cream text-xl font-bold mb-2">{feature.title}</h3>
@@ -115,7 +115,7 @@ export function AboutSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={featuresInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="flex items-start gap-4 p-6 border border-forest/10 hover:border-forest/30 hover:bg-forest/5 transition-colors"
+                className="surface-shadow-sm flex items-start gap-4 border border-forest/10 p-6 transition-colors hover:border-forest/30 hover:bg-forest/5"
               >
                 <div className={`p-2 flex-shrink-0 ${benefit.highlight ? "bg-coral/10 text-coral" : "bg-forest/10 text-forest"}`}>
                   {benefit.icon}
@@ -134,7 +134,7 @@ export function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={featuresInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-6 flex items-center gap-3 p-4 border border-forest/10 bg-forest/5"
+            className="surface-shadow-sm mt-6 flex items-center gap-3 border border-forest/10 bg-forest/5 p-4"
           >
             <Shield className="h-4 w-4 text-forest flex-shrink-0" />
             <p className="text-sm text-forest/70">

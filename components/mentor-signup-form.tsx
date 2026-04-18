@@ -331,7 +331,7 @@ export function MentorSignupForm() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        className="border border-forest/15 bg-cream px-8 py-14 text-center shadow-[14px_14px_0_0_rgba(4,13,14,0.08)] flex min-h-[420px] flex-col items-center justify-center"
+        className="surface-shadow-lg flex min-h-[420px] flex-col items-center justify-center border border-forest/15 bg-cream px-8 py-14 text-center"
       >
         <motion.div
           initial={{ scale: 0 }}
@@ -426,7 +426,7 @@ export function MentorSignupForm() {
   const showOkButton = current.id !== "gender" && current.id !== "whatsapp" && current.id !== "shirt"
 
   return (
-    <div className="border border-forest/15 bg-cream p-6 shadow-[14px_14px_0_0_rgba(4,13,14,0.08)] md:p-10" ref={containerRef}>
+    <div className="surface-shadow-lg border border-forest/15 bg-cream p-6 md:p-10" ref={containerRef}>
       <div className="mb-10 flex flex-col gap-3 border-b border-forest/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-coral/80">// mentor.form</p>

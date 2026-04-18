@@ -1,5 +1,15 @@
 import { getApp, getApps, initializeApp, type FirebaseApp } from "firebase/app"
-import { getAuth, signInAnonymously, GoogleAuthProvider, signInWithPopup, signOut, type Auth, type User } from "firebase/auth"
+import {
+  getAuth,
+  getRedirectResult,
+  GoogleAuthProvider,
+  signInAnonymously,
+  signInWithPopup,
+  signInWithRedirect,
+  signOut,
+  type Auth,
+  type User,
+} from "firebase/auth"
 import { getFirestore, type Firestore } from "firebase/firestore"
 
 const firebaseConfig = {
@@ -58,11 +68,64 @@ export async function ensureFirebaseAnonymousSession(): Promise<User | null> {
   }
 }
 
+function createGoogleProvider(): GoogleAuthProvider {
+  const provider = new GoogleAuthProvider()
+  provider.setCustomParameters({ prompt: "select_account" })
+  return provider
+}
+
 export async function signInWithGoogle(): Promise<User> {
   const auth = getFirebaseAuth()
-  const provider = new GoogleAuthProvider()
+  const provider = createGoogleProvider()
   const result = await signInWithPopup(auth, provider)
   return result.user
+}
+
+export async function startGoogleRedirectSignIn(): Promise<void> {
+  const auth = getFirebaseAuth()
+  const provider = createGoogleProvider()
+  await signInWithRedirect(auth, provider)
+}
+
+export async function completeGoogleRedirectSignIn(): Promise<User | null> {
+  const auth = getFirebaseAuth()
+  const result = await getRedirectResult(auth)
+  return result?.user ?? null
+}
+
+type FirebaseAuthError = {
+  code?: string
+  message?: string
+}
+
+export function getGoogleSignInErrorMessage(error: unknown): string {
+  const authError = error as FirebaseAuthError | null
+  const code = authError?.code ?? ""
+
+  switch (code) {
+    case "auth/unauthorized-domain":
+      return "This domain is not authorized for Firebase Google sign-in. Add the production hostname under Firebase Authentication > Settings > Authorized domains."
+    case "auth/popup-blocked":
+      return "The browser blocked the Google sign-in popup. Try again or continue with redirect sign-in."
+    case "auth/popup-closed-by-user":
+      return "The Google sign-in popup closed before the login completed."
+    case "auth/cancelled-popup-request":
+      return "Another Google sign-in request is already in progress."
+    default:
+      return authError?.message || "Google sign-in failed."
+  }
+}
+
+export function shouldUseRedirectFallback(error: unknown): boolean {
+  const authError = error as FirebaseAuthError | null
+  const code = authError?.code ?? ""
+  const message = authError?.message?.toLowerCase() ?? ""
+
+  return (
+    code === "auth/popup-blocked" ||
+    message.includes("cross-origin-opener-policy") ||
+    message.includes("window.closed")
+  )
 }
 
 export async function signOutFromFirebase(): Promise<void> {

@@ -26,10 +26,14 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 import {
+  completeGoogleRedirectSignIn,
+  getGoogleSignInErrorMessage,
   getFirebaseAuth,
   getFirebaseDb,
   signInWithGoogle,
   signOutFromFirebase,
+  shouldUseRedirectFallback,
+  startGoogleRedirectSignIn,
   isAdminEmail,
   isFirebaseConfigured,
 } from "@/lib/firebase-client"
@@ -133,6 +137,7 @@ function downloadCSV(rows: MentorSubmission[]) {
 export function AdminDashboard() {
   const [authState, setAuthState] = useState<AuthState>("loading")
   const [user, setUser] = useState<User | null>(null)
+  const [authError, setAuthError] = useState<string | null>(null)
   const [submissions, setSubmissions] = useState<MentorSubmission[]>([])
   const [loading, setLoading] = useState(false)
   const [fetchError, setFetchError] = useState<string | null>(null)
@@ -145,18 +150,26 @@ export function AdminDashboard() {
   /* ---- Auth listener ---- */
   useEffect(() => {
     if (!isFirebaseConfigured) {
+      setAuthError("Firebase is not configured for this deployment.")
       setAuthState("unauthenticated")
       return
     }
+
+    void completeGoogleRedirectSignIn().catch((error: unknown) => {
+      setAuthError(getGoogleSignInErrorMessage(error))
+    })
+
     const auth = getFirebaseAuth()
     const unsub = onAuthStateChanged(auth, (firebaseUser) => {
       if (!firebaseUser || firebaseUser.isAnonymous) {
         setUser(null)
         setAuthState("unauthenticated")
       } else if (!isAdminEmail(firebaseUser.email)) {
+        setAuthError(null)
         setUser(firebaseUser)
         setAuthState("unauthorized")
       } else {
+        setAuthError(null)
         setUser(firebaseUser)
         setAuthState("ready")
       }
@@ -190,11 +203,16 @@ export function AdminDashboard() {
 
   /* ---- Sign-in ---- */
   async function handleSignIn() {
+    setAuthError(null)
     setSigningIn(true)
     try {
       await signInWithGoogle()
-    } catch {
-      // user closed popup or error — auth listener handles state
+    } catch (error: unknown) {
+      if (shouldUseRedirectFallback(error)) {
+        await startGoogleRedirectSignIn()
+        return
+      }
+      setAuthError(getGoogleSignInErrorMessage(error))
     } finally {
       setSigningIn(false)
     }
@@ -300,6 +318,17 @@ export function AdminDashboard() {
           <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-foreground/50">
             Sign in with an authorized Google account to view and manage mentor signup submissions.
           </p>
+
+          {authError && (
+            <div className="mx-auto mt-5 max-w-sm rounded-xl border border-amber-500/25 bg-amber-500/10 px-4 py-3 text-left text-sm leading-relaxed text-amber-100">
+              <p>{authError}</p>
+              {authError.includes("Authorized domains") && (
+                <p className="mt-2 text-xs text-amber-100/80">
+                  Current hostname: {typeof window !== "undefined" ? window.location.hostname : "unknown"}
+                </p>
+              )}
+            </div>
+          )}
 
           <button
             onClick={handleSignIn}

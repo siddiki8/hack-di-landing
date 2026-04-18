@@ -87,7 +87,7 @@ export function ScheduleSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: dayIndex * 0.1 }}
-              className="border border-forest/10 bg-cream relative overflow-hidden"
+              className="surface-shadow relative overflow-hidden border border-forest/10 bg-cream"
             >
               <div className="px-6 py-4 border-b border-forest/10 bg-forest/5">
                 <h3 className="font-mono text-sm font-semibold text-forest">{day.day}</h3>

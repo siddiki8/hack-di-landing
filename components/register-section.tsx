@@ -34,7 +34,7 @@ export function RegisterSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="border border-cream/10 p-10"
+            className="surface-shadow-coral border border-cream/10 p-10"
           >
             <div className="flex items-center gap-2 mb-4">
               <Clock className="h-5 w-5 text-coral" />

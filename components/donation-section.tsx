@@ -41,7 +41,7 @@ export function DonationSection() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="max-w-3xl"
         >
-          <div className="border border-forest/10 p-8">
+          <div className="surface-shadow border border-forest/10 bg-white/60 p-8">
             <div className="flex items-center gap-2 mb-4">
               <Heart className="h-5 w-5 text-coral" />
               <h3 className="text-lg font-bold text-forest">Make a Donation</h3>

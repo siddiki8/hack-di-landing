@@ -76,7 +76,7 @@ export default function MentorSignupPage() {
                   our mentor intake queue. Pick how you want to help and we will handle the follow-up.
                 </p>
 
-                <div className="mt-10 max-w-2xl border border-forest/15 bg-white/70 shadow-[10px_10px_0_0_rgba(255,122,69,0.12)] backdrop-blur-sm">
+                <div className="surface-shadow-coral mt-10 max-w-2xl border border-forest/15 bg-white/70 backdrop-blur-sm">
                   <div className="flex items-center gap-2 border-b border-forest/10 bg-forest/5 px-4 py-3">
                     <div className="h-3 w-3 rounded-full bg-coral/70" />
                     <div className="h-3 w-3 rounded-full bg-forest/25" />
@@ -110,7 +110,7 @@ export default function MentorSignupPage() {
 
                 <div className="mt-10 grid gap-4 sm:grid-cols-3">
                   {proof.map((item) => (
-                    <div key={item.label} className="border border-forest/12 bg-white/50 p-5">
+                    <div key={item.label} className="surface-shadow-sm border border-forest/12 bg-white/50 p-5">
                       <p className="font-mono text-3xl font-bold text-forest">{item.value}</p>
                       <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-coral/80">
                         {item.label}
@@ -120,11 +120,11 @@ export default function MentorSignupPage() {
                 </div>
               </div>
 
-              <div className="border border-forest/15 bg-white/65 p-6 shadow-[10px_10px_0_0_rgba(4,13,14,0.06)] backdrop-blur-sm md:p-8">
+              <div className="surface-shadow border border-forest/15 bg-white/65 p-6 backdrop-blur-sm md:p-8">
                 <p className="font-mono text-xs uppercase tracking-[0.28em] text-coral/80">// event.config</p>
                 <div className="mt-6 grid gap-3">
                   {eventConfig.map((item) => (
-                    <div key={item.label} className="flex items-start gap-3 border border-forest/10 bg-cream px-4 py-4">
+                    <div key={item.label} className="surface-shadow-sm flex items-start gap-3 border border-forest/10 bg-cream px-4 py-4">
                       <div className="mt-0.5 text-coral">{item.icon}</div>
                       <div>
                         <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-forest/45">{item.label}</p>
@@ -134,7 +134,7 @@ export default function MentorSignupPage() {
                   ))}
                 </div>
 
-                <div className="mt-8 border border-coral/20 bg-coral/8 p-5">
+                <div className="surface-shadow-sm-coral mt-8 border border-coral/20 bg-coral/8 p-5">
                   <p className="font-mono text-xs uppercase tracking-[0.2em] text-coral">What to expect</p>
                   <ul className="mt-4 space-y-3 text-sm leading-6 text-forest/75">
                     <li>One mentor form per person. We will follow up with scheduling once submissions are reviewed.</li>
@@ -166,7 +166,7 @@ export default function MentorSignupPage() {
 
             <div className="mt-12 grid gap-4 md:grid-cols-3">
               {mentorRoles.map((role) => (
-                <div key={role.num} className="border border-forest/12 bg-white/65 p-8 shadow-[10px_10px_0_0_rgba(255,122,69,0.08)]">
+                <div key={role.num} className="surface-shadow-coral border border-forest/12 bg-white/65 p-8">
                   <p className="font-mono text-sm text-coral">{role.num}</p>
                   <div className="mt-4 flex items-center gap-2 text-coral">{role.icon}</div>
                   <h3 className="mt-4 text-xl font-semibold text-forest">{role.title}</h3>
