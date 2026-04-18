@@ -32,13 +32,14 @@ export function Footer() {
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">// links</p>
             <ul className="space-y-2">
               {[
-                { href: "#about", label: "About" },
-                { href: "#sponsors", label: "Sponsors" },
-                { href: "#schedule", label: "Schedule" },
-                { href: "#faq", label: "FAQ" },
+                { href: "/#about", label: "About" },
+                { href: "/#sponsors", label: "Sponsors" },
+                { href: "/#schedule", label: "Schedule" },
+                { href: "/#faq", label: "FAQ" },
+                { href: "/mentor-signup", label: "Mentor Signup" },
                 { href: "/winners", label: "Winners" },
                 { href: "/sponsor-info", label: "Sponsor Info" },
-                { href: "#donate", label: "Donate" },
+                { href: "/#donate", label: "Donate" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link href={link.href} className="text-cream/50 hover:text-cream transition-colors text-sm">

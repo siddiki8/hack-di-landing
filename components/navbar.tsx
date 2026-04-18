@@ -7,13 +7,11 @@ import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#mentor-companies", label: "Mentors" },
-  { href: "#schedule", label: "Schedule" },
-  { href: "#sponsors", label: "Sponsors" },
-  { href: "#faq", label: "FAQ" },
-  { href: "/winners", label: "2025 Recap" },
-  { href: "/sponsor-info", label: "Sponsor Info" },
+  { href: "/#about", label: "About" },
+  { href: "/mentor-signup", label: "Mentor" },
+  { href: "/sponsor-info", label: "Sponsor" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/winners", label: "[2025 Recap]", highlight: true as const },
 ]
 
 export function Navbar() {
@@ -62,20 +60,20 @@ export function Navbar() {
               <span className="text-sm font-semibold text-coral">.hack()</span>
             </span>
           </Link>
-          <Link
-            href="/winners"
-            className="group hidden sm:inline-flex items-center gap-1 font-mono text-[11px] uppercase tracking-[0.2em] text-coral border-l border-forest/20 pl-4 hover:text-coral/80 transition-colors"
-          >
-            <span className="opacity-60 group-hover:opacity-100">&gt;</span> 2025 recap
-          </Link>
+
         </div>
 
         <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.slice(0, 4).map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="font-mono text-xs uppercase tracking-wider text-forest/80 transition-colors hover:text-coral"
+              className={cn(
+                "font-mono text-xs uppercase tracking-wider transition-colors",
+                (link as { highlight?: boolean }).highlight
+                  ? "text-coral hover:text-coral/70"
+                  : "text-forest/80 hover:text-coral",
+              )}
             >
               {link.label}
             </Link>
@@ -113,7 +111,10 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block py-3 font-mono text-xs uppercase tracking-wider text-forest/80 hover:text-coral active:text-coral"
+                  className={cn(
+                    "block py-3 font-mono text-xs uppercase tracking-wider hover:text-coral active:text-coral",
+                    (link as { highlight?: boolean }).highlight ? "text-coral" : "text-forest/80",
+                  )}
                 >
                   {link.label}
                 </Link>

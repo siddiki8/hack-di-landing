@@ -13,6 +13,7 @@
     "@react-three/fiber": "^9.6.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "firebase": "^12.12.0",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.292.0",
     "next": "15.5.15",

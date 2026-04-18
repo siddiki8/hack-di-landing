@@ -1,23 +1,23 @@
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { MentorSignupForm } from "@/components/mentor-signup-form"
 import {
   ArrowLeft,
   ArrowRight,
+  ChevronDown,
   Clock,
   Code2,
   GitPullRequest,
   Briefcase,
   Users,
-  Mail,
-  Instagram,
   Calendar,
   MapPin,
 } from "lucide-react"
 
 export const metadata = {
   title: "Mentor Signup | Hack DI 2026",
-  description: "Mentor applications for Hack DI 2026 open soon.",
+  description: "Apply to mentor at Hack DI 2026. Join our community and help guide the next generation of builders.",
 }
 
 const mentorRoles = [
@@ -44,210 +44,157 @@ const mentorRoles = [
 const proof = [
   { value: "10+", label: "Mentor Orgs" },
   { value: "50+", label: "Devs Mentored" },
-  { value: "4–6h", label: "Your Commitment" },
+  { value: "~3h", label: "Your Commitment" },
   { value: "24h", label: "Event Duration" },
 ]
 
 const eventConfig = [
   { icon: <Calendar className="h-4 w-4" />, label: "Dates", value: "September 12–13, 2026" },
   { icon: <MapPin className="h-4 w-4" />, label: "Location", value: "Darul Islah · Teaneck, NJ" },
-  { icon: <Clock className="h-4 w-4" />, label: "Commitment", value: "Pick a 4-hour block" },
+  { icon: <Clock className="h-4 w-4" />, label: "Commitment", value: "~3-hour block, flexible" },
   { icon: <Users className="h-4 w-4" />, label: "Expected", value: "75–125 participants" },
 ]
 
 export default function MentorSignupPage() {
   return (
-    <div className="min-h-screen bg-cream text-forest flex flex-col">
+    <div className="min-h-screen flex flex-col bg-cream text-forest">
       <Navbar />
 
       <main className="flex-grow pt-16">
-        {/* Hero */}
-        <section className="py-20 md:py-28">
+        <section className="relative overflow-hidden border-b border-forest/10 bg-cream py-20 md:py-24">
           <div className="container mx-auto px-5 md:px-10">
-            <div className="max-w-3xl">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">
-                // mentors · year=2026
-              </p>
-              <h1 className="font-mono text-4xl md:text-6xl font-bold text-forest tracking-tight mb-6">
-                Mentor the <span className="text-coral">Next Cohort</span>.
-              </h1>
-              <p className="text-forest/70 text-lg max-w-2xl mb-10">
-                Applications are opening soon. If you're a working engineer, designer, or PM — come spend a
-                weekend helping Muslim devs ship their first real project. Low lift, huge impact.
-              </p>
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.8fr)] lg:items-start">
+              <div className="max-w-3xl">
+                <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-coral/80">
+                  // mentors · year=2026 · status=open
+                </p>
+                <h1 className="font-mono text-4xl font-bold tracking-tight text-forest md:text-6xl">
+                  Mentor the <span className="text-coral">next cohort</span> and join the build floor.
+                </h1>
+                <p className="mt-6 max-w-2xl text-lg text-forest/72">
+                  If you are a working engineer, designer, PM, founder, or operator, this form puts you directly into
+                  our mentor intake queue. Pick how you want to help and we will handle the follow-up.
+                </p>
 
-              {/* Terminal */}
-              <div className="border border-forest/20 bg-white/70 backdrop-blur-sm max-w-2xl">
-                <div className="flex items-center gap-2 px-4 py-2 border-b border-forest/10 bg-forest/5">
-                  <div className="w-3 h-3 rounded-full bg-coral/60" />
-                  <div className="w-3 h-3 rounded-full bg-forest/30" />
-                  <div className="w-3 h-3 rounded-full bg-forest/20" />
-                  <span className="ml-2 font-mono text-[10px] text-forest/40 tracking-wider">
-                    bash — mentors.log
-                  </span>
+                <div className="mt-10 max-w-2xl border border-forest/15 bg-white/70 shadow-[10px_10px_0_0_rgba(255,122,69,0.12)] backdrop-blur-sm">
+                  <div className="flex items-center gap-2 border-b border-forest/10 bg-forest/5 px-4 py-3">
+                    <div className="h-3 w-3 rounded-full bg-coral/70" />
+                    <div className="h-3 w-3 rounded-full bg-forest/25" />
+                    <div className="h-3 w-3 rounded-full bg-forest/15" />
+                    <span className="ml-2 font-mono text-[10px] tracking-wider text-forest/35">
+                      bash - mentor-signup.log
+                    </span>
+                  </div>
+                  <div className="space-y-1 px-5 py-5 font-mono text-sm text-forest/75">
+                    <p className="text-forest/45">$ hack-di mentors --apply --year=2026</p>
+                    <p className="text-terminal">✓ intake_mode: <span className="text-forest">online-form</span></p>
+                    <p className="text-terminal">✓ commitment: <span className="text-forest">~3-hour block, flexible</span></p>
+                    <p className="text-terminal">✓ location: <span className="text-forest">Darul Islah · Teaneck, NJ</span></p>
+                    <p className="text-terminal">✓ mentor_ops: <span className="text-forest">WhatsApp coordination + schedule follow-up</span></p>
+                    <p className="mt-2 text-coral">[READY] form intake active <span className="animate-pulse">▊</span></p>
+                  </div>
                 </div>
-                <div className="px-5 py-5 font-mono text-sm space-y-1">
-                  <p className="text-forest/50">$ hack-di mentors --apply --year=2026</p>
-                  <p className="text-terminal">✓ event_date: <span className="text-forest">September 12–13, 2026</span></p>
-                  <p className="text-terminal">✓ 2025_snapshot: <span className="text-forest">10+ mentor orgs · 50+ devs</span></p>
-                  <p className="text-terminal">✓ commitment: <span className="text-forest">4–6 hours · your choice of block</span></p>
-                  <p className="text-terminal">✓ prior_mentors: <span className="text-forest">auto-queued · we'll ping you first</span></p>
-                  <p className="text-coral mt-2">
-                    [HINT] applications opening soon · reach out now <span className="animate-terminal-blink">▊</span>
+
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link
+                    href="#apply"
+                    className="group inline-flex h-11 items-center justify-center bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-forest"
+                  >
+                    Jump To Form
+                    <ChevronDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-0.5" />
+                  </Link>
+                  <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-forest/45">
+                    Scroll down to apply
                   </p>
                 </div>
+
+                <div className="mt-10 grid gap-4 sm:grid-cols-3">
+                  {proof.map((item) => (
+                    <div key={item.label} className="border border-forest/12 bg-white/50 p-5">
+                      <p className="font-mono text-3xl font-bold text-forest">{item.value}</p>
+                      <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.22em] text-coral/80">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border border-forest/15 bg-white/65 p-6 shadow-[10px_10px_0_0_rgba(4,13,14,0.06)] backdrop-blur-sm md:p-8">
+                <p className="font-mono text-xs uppercase tracking-[0.28em] text-coral/80">// event.config</p>
+                <div className="mt-6 grid gap-3">
+                  {eventConfig.map((item) => (
+                    <div key={item.label} className="flex items-start gap-3 border border-forest/10 bg-cream px-4 py-4">
+                      <div className="mt-0.5 text-coral">{item.icon}</div>
+                      <div>
+                        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-forest/45">{item.label}</p>
+                        <p className="mt-1 text-sm font-medium text-forest/85">{item.value}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="mt-8 border border-coral/20 bg-coral/8 p-5">
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-coral">What to expect</p>
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-forest/75">
+                    <li>One mentor form per person. We will follow up with scheduling once submissions are reviewed.</li>
+                    <li>Choose multiple contribution modes if you want to mentor, workshop, recruit, or support financially.</li>
+                    <li>Your commitment is flexible — plan for a ~3-hour block during the event.</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Proof stats */}
-        <section className="py-12 bg-forest text-cream">
+        <section id="apply" className="border-y border-coral/15 bg-coral py-16 md:py-24">
+          <div className="mx-auto max-w-3xl px-5 md:px-10">
+            <MentorSignupForm />
+          </div>
+        </section>
+
+        <section className="border-y border-forest/10 bg-white/35 py-20">
           <div className="container mx-auto px-5 md:px-10">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-8">
-              // proof · 2025.stats
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-coral/80">// role.spec</p>
+            <h2 className="text-3xl font-bold tracking-tight text-forest md:text-4xl">
+              Where mentors usually create the most lift
+            </h2>
+            <p className="mt-4 max-w-2xl text-forest/65">
+              This is not a keynote circuit. The highest-impact mentors usually unblock teams quickly, share operating
+              context, and help participants make better tradeoffs under time pressure.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {proof.map((p) => (
-                <div key={p.label}>
-                  <p className="font-mono text-3xl md:text-4xl font-bold text-cream mb-1">{p.value}</p>
-                  <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-coral">{p.label}</p>
+
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
+              {mentorRoles.map((role) => (
+                <div key={role.num} className="border border-forest/12 bg-white/65 p-8 shadow-[10px_10px_0_0_rgba(255,122,69,0.08)]">
+                  <p className="font-mono text-sm text-coral">{role.num}</p>
+                  <div className="mt-4 flex items-center gap-2 text-coral">{role.icon}</div>
+                  <h3 className="mt-4 text-xl font-semibold text-forest">{role.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-forest/65">{role.body}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-8">
+          </div>
+        </section>
+
+        <section className="py-20 md:py-24 bg-cream">
+          <div className="container mx-auto px-5 md:px-10">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.3em] text-coral/80">// still deciding?</p>
+            <h2 className="text-3xl font-bold tracking-tight text-forest md:text-4xl">
+              See what last year's mentors helped teams ship.
+            </h2>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/winners"
-                className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-cream border-b border-coral pb-1 hover:text-coral transition-colors"
-              >
-                View the 2025 build log <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* What mentors do */}
-        <section className="py-20 bg-forest/5">
-          <div className="container mx-auto px-5 md:px-10">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">// role.spec</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest mb-4 tracking-tight">
-              What a Mentor Actually Does
-            </h2>
-            <p className="text-forest/60 max-w-2xl mb-12">
-              Not a lecture. Not a keynote. Just 4–6 hours of showing up for teams that need you.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {mentorRoles.map((r) => (
-                <div key={r.num} className="border border-forest/10 bg-cream p-8 hover:bg-white transition-colors">
-                  <p className="font-mono text-coral text-sm mb-4">{r.num}</p>
-                  <div className="flex items-center gap-2 text-forest mb-3">
-                    {r.icon}
-                    <h3 className="text-xl font-bold text-forest">{r.title}</h3>
-                  </div>
-                  <p className="text-forest/60 text-sm leading-relaxed">{r.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Event details grid */}
-        <section className="py-12 bg-forest text-cream">
-          <div className="container mx-auto px-5 md:px-10">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-8">// event.config</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-cream/10 border border-cream/10">
-              {eventConfig.map((s) => (
-                <div key={s.label} className="bg-forest p-6">
-                  <div className="flex items-center gap-2 text-coral mb-3">
-                    {s.icon}
-                    <span className="font-mono text-[10px] uppercase tracking-[0.2em]">{s.label}</span>
-                  </div>
-                  <p className="font-mono text-base font-bold text-cream">{s.value}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Who we're looking for */}
-        <section className="py-24">
-          <div className="container mx-auto px-5 md:px-10">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">// who</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-forest mb-4 tracking-tight">
-              Who We're Looking For
-            </h2>
-            <p className="text-forest/60 max-w-2xl mb-12">
-              Anyone doing the work, professionally. You don't need to be staff+ at Google. You need to have
-              shipped things, and be willing to answer questions for a few hours.
-            </p>
-
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <ul className="space-y-3">
-                {[
-                  "Working engineers (any language, any stack)",
-                  "Product designers & UX folks",
-                  "PMs, founders, and technical leads",
-                  "Sisters: we especially need you — women mentors for our sister-only spaces",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-forest/80">
-                    <span className="text-coral font-mono mt-1">→</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="border border-forest/15 bg-white/60 backdrop-blur-sm p-8 self-start">
-                <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">// apply</p>
-                <h3 className="font-mono text-2xl font-bold text-forest mb-3">
-                  Ready to mentor?
-                </h3>
-                <p className="text-forest/70 leading-relaxed mb-6">
-                  Email us directly. Prior mentors — you're already on the list, we'll ping you first.
-                </p>
-                <a
-                  href="mailto:hackathon@darulislah.org?subject=Mentor%20Interest%20-%20Hack%20DI%202026"
-                  className="group w-full inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream hover:bg-coral transition-colors"
-                >
-                  <Mail className="mr-2 h-4 w-4" />
-                  Email to Mentor
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Footer CTA */}
-        <section className="py-24 bg-forest text-cream">
-          <div className="container mx-auto px-5 md:px-10">
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-coral mb-4">
-              // still deciding?
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-cream mb-8 tracking-tight">
-              See what last year's mentors helped build.
-            </h2>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/winners"
-                className="group inline-flex items-center justify-center h-11 bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream hover:bg-coral/80 transition-colors"
+                className="group inline-flex h-11 items-center justify-center bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-forest"
               >
                 <Users className="mr-2 h-4 w-4" />
                 2025 Recap
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="https://instagram.com/hackdarulislah"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center h-11 border border-cream/40 px-6 font-mono text-xs uppercase tracking-wider text-cream hover:border-coral hover:text-coral transition-colors"
-              >
-                <Instagram className="mr-2 h-4 w-4" />
-                @hackdarulislah
-              </Link>
-              <Link
                 href="/"
-                className="inline-flex items-center justify-center h-11 font-mono text-xs uppercase tracking-wider text-cream/60 hover:text-coral transition-colors"
+                className="inline-flex h-11 items-center justify-center border border-forest/20 px-6 font-mono text-xs uppercase tracking-wider text-forest/70 transition-colors hover:border-coral hover:text-coral"
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Home
