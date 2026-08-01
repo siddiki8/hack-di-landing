@@ -32,6 +32,10 @@ export function RegisterSection() {
             Registration is open now, from September 5 at 9:00 AM to September 6 at 10:00 AM. Space is limited, so sign up
             today!
           </p>
+          <div className="mt-6 inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2">
+            <span className="text-gold font-bold text-lg">$3,000</span>
+            <span className="text-gray-300">Prize Pool</span>
+          </div>
         </motion.div>
 
         <div className="max-w-3xl mx-auto">
