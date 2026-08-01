@@ -6,7 +6,7 @@ import { Mail, Phone, Calendar, MapPin, Users, CheckCircle2, ExternalLink } from
 
 export const metadata = {
   title: "Sponsor Information | Hack DI",
-  description: "Learn about sponsorship opportunities for Hack DI, Darul Islah's inaugural 24-hour hackathon.",
+  description: "Learn about sponsorship opportunities for Hack DI, Darul Islah's annual 24-hour hackathon.",
 }
 
 export default function SponsorInfoPage() {
@@ -32,7 +32,7 @@ export default function SponsorInfoPage() {
             <div className="bg-deepgreen-50/10 backdrop-blur-sm p-8 rounded-lg border border-deepgreen-100 mb-12">
               <h2 className="text-2xl font-bold mb-6 font-mono">About Hack DI</h2>
               <p className="text-gray-300 mb-6">
-                Hack DI is Darul Islah's inaugural 24-hour hackathon, bringing together high school and college students
+                Hack DI is Darul Islah's annual 24-hour hackathon, bringing together high school and college students
                 to innovate, collaborate, and develop solutions to real-world problems. This event offers participants
                 mentorship, workshops, networking opportunities, and a platform to showcase their skills.
               </p>
@@ -42,7 +42,7 @@ export default function SponsorInfoPage() {
                   <Calendar className="h-5 w-5 text-gold mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-medium">Dates</h3>
-                    <p className="text-gray-300">June 28-29, 2025</p>
+                    <p className="text-gray-300">September 5-6, 2026</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -261,7 +261,7 @@ export default function SponsorInfoPage() {
               </div>
 
               <div className="mt-8 text-center">
-                <p className="text-gray-300 font-medium">Commitment Deadline: June 15, 2025</p>
+                <p className="text-gray-300 font-medium">Commitment Deadline: August 15, 2026</p>
                 <p className="text-gray-300 mt-2">
                   Darul Islah is a 501(c)(3) nonprofit - all donations are tax-deductible.
                 </p>

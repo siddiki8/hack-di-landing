@@ -118,8 +118,9 @@ export function AboutSection() {
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Hack DI is a 24-hour hackathon at Darul Islah where participants collaborate to build innovative solutions
-            to real-world problems. Whether you're a seasoned developer or just starting out, Hack DI provides the
-            perfect platform to learn, create, and connect.
+            to real-world problems. Join us September 5-6, 2026 for a weekend of innovation, learning, and connection.
+            Whether you're a seasoned developer or just starting out, Hack DI provides the perfect platform to learn,
+            create, and connect.
           </p>
         </motion.div>
 
