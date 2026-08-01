@@ -48,8 +48,8 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-300 max-w-lg mt-6"
           >
-            Darul Islah's first-ever hackathon was a huge success! Over 30 participants built amazing projects for the
-            Muslim community in just 24 hours.
+            Join us for Darul Islah's second annual hackathon! Build amazing projects for the Muslim community over an
+            action-packed weekend.
           </motion.p>
 
           <motion.div
@@ -58,12 +58,12 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            {/* View Winners button */}
+            {/* Register Now button */}
             <div className="relative inline-block">
               {/* Animated glow effect */}
               <div className="absolute -inset-1 rounded-lg bg-gold/30 blur-md animate-breathing-glow"></div>
 
-              <Link href="/winners">
+              <Link href="/register">
                 <Button
                   size="lg"
                   className={cn(
@@ -72,7 +72,7 @@ export function HeroSection() {
                     "transition-all duration-300 ease-in-out",
                   )}
                 >
-                  View Winners <ArrowRight className="ml-2 h-4 w-4" />
+                  Register Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </div>
@@ -93,7 +93,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-sm text-gray-400 mt-6"
           >
-            June 28-29, 2025 • Darul Islah Community Center • ✅ Completed Successfully
+            September 5-6, 2026 • Darul Islah Community Center • Registration Open
           </motion.div>
         </div>
       </div>
