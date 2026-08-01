@@ -34,14 +34,15 @@ export default function RegisterPage() {
             <div className="h-px w-24 bg-gold/50 mx-auto my-8"></div>
 
             <p className="text-xl text-gray-300 mb-12 text-center">
-              Secure your spot for an unforgettable weekend of innovation, learning, and collaboration.
+              Registration is open now, from September 5 at 9:00 AM to September 6 at 10:00 AM. Secure your spot for an
+              unforgettable weekend of innovation, learning, and collaboration.
             </p>
 
             <div className="bg-deepgreen-50/10 backdrop-blur-sm p-6 rounded-lg border border-deepgreen-100 mb-8">
               {/* Zeffy Registration Form */}
               <div style={{ position: "relative", overflow: "hidden", width: "100%", height: "600px" }}>
                 <iframe
-                  title="Hack DI Registration Form"
+                  title="Hack DI 2026 Registration Form"
                   style={{
                     position: "absolute",
                     border: 0,
@@ -52,7 +53,7 @@ export default function RegisterPage() {
                     width: "100%",
                     height: "100%",
                   }}
-                  src="https://www.zeffy.com/embed/ticketing/di-hackathon--2025"
+                  src="https://www.zeffy.com/embed/ticketing/hack-di--2026"
                   allowPaymentRequest
                   allowTransparency={true}
                 ></iframe>
