@@ -26,10 +26,11 @@ export function RegisterSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-mono">
-            Hack DI 2025 <span className="text-gold">Complete!</span>
+            Register for <span className="text-gold">Hack DI 2026</span>
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Thank you to everyone who participated in our inaugural hackathon! Stay tuned for future events.
+            Registration is open now, from September 5 at 9:00 AM to September 6 at 10:00 AM. Space is limited, so sign up
+            today!
           </p>
         </motion.div>
 
@@ -40,18 +41,18 @@ export function RegisterSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="bg-deepgreen/50 backdrop-blur-sm p-12 rounded-lg border border-deepgreen-100 text-center"
           >
-            <h3 className="text-2xl font-bold mb-6">Alhamdulillah for a Successful Event!</h3>
+            <h3 className="text-2xl font-bold mb-6">Secure Your Spot!</h3>
             <p className="text-gray-300 mb-8 max-w-xl mx-auto">
-              Over 30 participants from multiple states came together to build innovative solutions for the Muslim
-              community. Check out the amazing winning projects and stay connected for future hackathons!
+              Join us for a weekend of innovation, learning, and collaboration at Darul Islah. Whether you're a seasoned
+              hacker or just getting started, there's a place for you at Hack DI 2026.
             </p>
 
-            {/* View Winners button */}
+            {/* Register Now button */}
             <div className="relative inline-block">
               {/* Animated glow effect */}
               <div className="absolute -inset-1 rounded-lg bg-gold/30 blur-md animate-breathing-glow"></div>
 
-              <Link href="/winners">
+              <Link href="/register">
                 <Button
                   size="lg"
                   className={cn(
@@ -60,13 +61,13 @@ export function RegisterSection() {
                     "transition-all duration-300 ease-in-out",
                   )}
                 >
-                  View Winners <ArrowRight className="ml-2 h-5 w-5" />
+                  Register Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
             </div>
 
             <p className="text-gray-400 mt-6">
-              Interested in future events? Contact us at{" "}
+              Have questions? Contact us at{" "}
               <a href="mailto:hackathon@darulislah.org" className="text-gold hover:underline">
                 hackathon@darulislah.org
               </a>
