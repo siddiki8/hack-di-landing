@@ -95,6 +95,16 @@ export function HeroSection() {
           >
             September 5-6, 2026 • Darul Islah Community Center • Registration Open
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="mt-6 inline-flex items-center gap-2 bg-gold/10 border border-gold/30 rounded-full px-4 py-2"
+          >
+            <span className="text-gold font-bold">$3,000</span>
+            <span className="text-gray-300 text-sm">Prize Pool</span>
+          </motion.div>
         </div>
       </div>
     </section>
