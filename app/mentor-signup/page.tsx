@@ -49,7 +49,7 @@ const proof = [
 ]
 
 const eventConfig = [
-  { icon: <Calendar className="h-4 w-4" />, label: "Dates", value: "September 12–13, 2026" },
+  { icon: <Calendar className="h-4 w-4" />, label: "Dates", value: "September 5–6, 2026" },
   { icon: <MapPin className="h-4 w-4" />, label: "Location", value: "Darul Islah · Teaneck, NJ" },
   { icon: <Clock className="h-4 w-4" />, label: "Commitment", value: "~3-hour block, flexible" },
   { icon: <Users className="h-4 w-4" />, label: "Expected", value: "75–125 participants" },

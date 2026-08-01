@@ -69,7 +69,7 @@ const tiers = [
 ]
 
 const eventDetails = [
-  { icon: <Calendar className="h-4 w-4" />, label: "Dates", value: "September 12–13, 2026" },
+  { icon: <Calendar className="h-4 w-4" />, label: "Dates", value: "September 5–6, 2026" },
   { icon: <MapPin className="h-4 w-4" />, label: "Location", value: "Darul Islah · Teaneck, NJ" },
   { icon: <Users className="h-4 w-4" />, label: "Expected Attendance", value: "75–125 builders + 50 mentors" },
   { icon: <Clock className="h-4 w-4" />, label: "Commitment Deadline", value: "August 28, 2026" },

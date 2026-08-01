@@ -1,11 +1,13 @@
 import Link from "next/link"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { ArrowLeft, ArrowRight, Clock, Camera } from "lucide-react"
+import { ArrowLeft, ArrowRight, CheckCircle2, Camera } from "lucide-react"
+
+const REGISTRATION_URL = "https://www.zeffy.com/en-US/ticketing/hack-di--2026"
 
 export const metadata = {
   title: "Register | Hack DI 2026",
-  description: "Registration for Hack DI 2026 opens soon. Stay tuned.",
+  description: "Register for Hack DI 2026 — September 5–6 at Darul Islah. $3,000 prize pool.",
 }
 
 export default function RegisterPage() {
@@ -20,41 +22,43 @@ export default function RegisterPage() {
               // register
             </p>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center font-mono text-forest tracking-tight">
-              Registration <span className="text-coral">Coming Soon</span>
+              Registration <span className="text-coral">Is Open</span>
             </h1>
             <p className="text-forest/60 text-center max-w-xl mx-auto mb-12">
-              Hack DI 2026 hits the terminal on September 12–13. We're still wiring up the registration flow —
-              check back soon or get pinged when it's live.
+              Hack DI 2026 runs September 5–6, 9 AM to 12 PM the next day. Claim your spot and join the build.
             </p>
 
             <div className="surface-shadow mb-8 border border-forest/10 bg-white/60 p-10 backdrop-blur-sm">
               <div className="flex items-center gap-2 mb-6">
-                <Clock className="h-5 w-5 text-coral" />
+                <CheckCircle2 className="h-5 w-5 text-coral" />
                 <p className="font-mono text-xs uppercase tracking-wider text-coral">
-                  // status: pending · September 12–13, 2026
+                  // status: live · September 5–6, 2026
                 </p>
               </div>
 
               <div className="font-mono text-sm text-forest/80 space-y-1 mb-8 border-l-2 border-coral/40 pl-4">
                 <p className="text-forest/50">$ hack-di register --year=2026</p>
-                <p className="text-forest/60">[WAIT] registration endpoint not yet deployed</p>
-                <p className="text-forest/60">[INFO] estimated launch: soon™</p>
-                <p className="text-coral">[HINT] star us on instagram to catch the drop</p>
+                <p className="text-terminal">✓ registration endpoint deployed</p>
+                <p className="text-forest/70">  ├─ dates: <span className="text-forest">Sept 5–6, 9 AM–12 PM</span></p>
+                <p className="text-forest/70">  └─ prize_pool: <span className="text-coral">$3,000</span></p>
+                <p className="text-coral">[READY] awaiting your ticket... <span className="animate-terminal-blink">▊</span></p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/winners"
+                <a
+                  href={REGISTRATION_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
                 >
-                  See 2025 Recap <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Link>
-                <a
-                  href="mailto:hackathon@darulislah.org"
+                  Register on Zeffy <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <Link
+                  href="/winners"
                   className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
                 >
-                  Email to Get Notified
-                </a>
+                  See 2025 Recap
+                </Link>
               </div>
             </div>
 

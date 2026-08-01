@@ -78,21 +78,25 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link
-            href="/register"
+          <a
+            href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-9 items-center bg-forest px-5 font-mono text-xs uppercase tracking-wider text-cream transition-colors duration-300 hover:bg-coral"
           >
             Register Now
-          </Link>
+          </a>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <Link
-            href="/register"
+          <a
+            href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex h-9 items-center bg-forest px-4 font-mono text-[11px] uppercase tracking-wider text-cream transition-colors hover:bg-coral"
           >
             Register
-          </Link>
+          </a>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-forest"

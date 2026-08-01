@@ -2,7 +2,6 @@
 
 import { useRef, useEffect, useMemo, useState } from "react"
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 
 const TOKEN_POOL = [
@@ -208,10 +207,10 @@ export function HeroSection() {
               <p className="text-terminal">✓ Restored state from <span className="text-forest">./.hackdi/2025.lock</span></p>
               <p className="text-terminal">  └─ 50+ devs shipped · $3k awarded · alhamdulillah</p>
               <p className="text-terminal">✓ Allocating resources...</p>
-              <p className="text-forest/70">  ├─ prize_pool: <span className="text-coral">$???</span></p>
-              <p className="text-forest/70">  ├─ duration: <span className="text-forest">24h</span></p>
-              <p className="text-forest/70">  └─ start: <span className="text-forest">Sept 12–13, 2026</span></p>
-              <p className="text-coral mt-2">[READY] Awaiting git push... <span className="animate-terminal-blink">▊</span></p>
+              <p className="text-forest/70">  ├─ prize_pool: <span className="text-coral">$3,000</span></p>
+              <p className="text-forest/70">  ├─ duration: <span className="text-forest">9 AM–12 PM</span></p>
+              <p className="text-forest/70">  └─ start: <span className="text-forest">Sept 5–6, 2026</span></p>
+              <p className="text-coral mt-2">[READY] Registration is live... <span className="animate-terminal-blink">▊</span></p>
             </div>
           </motion.div>
 
@@ -233,7 +232,7 @@ export function HeroSection() {
             className="text-forest/70 text-lg max-w-xl mb-8"
           >
             v2.0 is compiling. Last year, 50+ devs spent 24 hours shipping real projects for the Muslim
-            community — this year, we're running it back. Bigger prize pool, deeper mentorship, same 24-hour sprint.
+            community — this year, we're running it back. $3,000 prize pool, deeper mentorship, same all-nighter energy.
           </motion.p>
 
           <motion.div
@@ -242,12 +241,14 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Link
-              href="/winners"
+            <a
+              href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
             >
-              See What 2025 Built <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              Register Now <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </a>
             <button
               onClick={scrollToAbout}
               className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
@@ -262,7 +263,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="inline-block font-mono text-xs text-forest/80 bg-cream/80 backdrop-blur-sm mt-8 px-2 py-1 tracking-wider"
           >
-            // September 12–13, 2026 · Darul Islah Community Center · Registration opening soon
+            // September 5–6, 2026 · 9 AM–12 PM · Darul Islah Community Center · Registration open
           </motion.p>
         </div>
 
@@ -274,8 +275,8 @@ export function HeroSection() {
           className="mt-20 flex flex-wrap gap-8"
         >
           {[
-            { value: "24h", label: "Duration" },
-            { value: "$???", label: "Prize Pool" },
+            { value: "27h", label: "Duration" },
+            { value: "$3k", label: "Prize Pool" },
             { value: "50+", label: "Devs in 2025" },
             { value: "10+", label: "Mentor Orgs" },
           ].map((stat) => (

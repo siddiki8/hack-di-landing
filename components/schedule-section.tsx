@@ -14,7 +14,7 @@ export function ScheduleSection() {
 
   const schedule = [
     {
-      day: "Day 1 — September 12, 2026",
+      day: "Day 1 — September 5, 2026",
       events: [
         { time: "8:00 AM", title: "Registration & Check-in", tag: "logistics" },
         { time: "9:00 AM", title: "Opening Ceremony", tag: "featured" },
@@ -32,7 +32,7 @@ export function ScheduleSection() {
       ],
     },
     {
-      day: "Day 2 — September 13, 2026",
+      day: "Day 2 — September 6, 2026",
       events: [
         { time: "4:30 AM", title: "Fajr Prayer", tag: "prayer" },
         { time: "7:00 AM", title: "Breakfast", tag: "meal" },
