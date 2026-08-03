@@ -79,7 +79,7 @@ export function Navbar() {
             </Link>
           ))}
           <a
-            href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+            href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-9 items-center bg-forest px-5 font-mono text-xs uppercase tracking-wider text-cream transition-colors duration-300 hover:bg-coral"
@@ -90,7 +90,7 @@ export function Navbar() {
 
         <div className="flex items-center gap-3 md:hidden">
           <a
-            href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+            href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex h-9 items-center bg-forest px-4 font-mono text-[11px] uppercase tracking-wider text-cream transition-colors hover:bg-coral"

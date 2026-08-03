@@ -201,16 +201,13 @@ export function HeroSection() {
               <span className="ml-2 font-mono text-[10px] text-forest/40 tracking-wider">bash — 80×24</span>
             </div>
             <div className="px-5 py-5 font-mono text-sm space-y-1">
-              <p className="text-forest/50">$ git checkout hack-di/2026</p>
-              <p className="text-forest/40">Switched to branch 'hack-di/2026'</p>
-              <p className="text-forest/50">$ npm run init -- --year=2026</p>
-              <p className="text-terminal">✓ Restored state from <span className="text-forest">./.hackdi/2025.lock</span></p>
-              <p className="text-terminal">  └─ 50+ devs shipped · $3k awarded · alhamdulillah</p>
-              <p className="text-terminal">✓ Allocating resources...</p>
-              <p className="text-forest/70">  ├─ prize_pool: <span className="text-coral">$3,000</span></p>
-              <p className="text-forest/70">  ├─ duration: <span className="text-forest">9 AM–12 PM</span></p>
-              <p className="text-forest/70">  └─ start: <span className="text-forest">Sept 5–6, 2026</span></p>
-              <p className="text-coral mt-2">[READY] Registration is live... <span className="animate-terminal-blink">▊</span></p>
+              <p className="text-forest/50">$ hack-di tickets --year=2026</p>
+              <p className="text-terminal">✓ Registration is open</p>
+              <p className="text-forest/70">  ├─ dates: <span className="text-forest">Sept 5–6, 2026</span></p>
+              <p className="text-forest/70">  ├─ hours: <span className="text-forest">9 AM – 12 PM next day</span></p>
+              <p className="text-forest/70">  ├─ venue: <span className="text-forest">Darul Islah · Teaneck, NJ</span></p>
+              <p className="text-forest/70">  └─ prize_pool: <span className="text-coral">$3,000</span></p>
+              <p className="text-coral mt-2">[OPEN] Claim your spot... <span className="animate-terminal-blink">▊</span></p>
             </div>
           </motion.div>
 
@@ -220,9 +217,8 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="font-mono text-4xl md:text-6xl font-bold tracking-tight text-forest mb-6"
           >
-            Learn.{" "}
-            <span className="text-coral">Build.</span>{" "}
-            Innovate.
+            Hack DI{" "}
+            <span className="text-coral">2026</span>
           </motion.h1>
 
           <motion.p
@@ -231,8 +227,8 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-forest/70 text-lg max-w-xl mb-8"
           >
-            v2.0 is compiling. Last year, 50+ devs spent 24 hours shipping real projects for the Muslim
-            community — this year, we're running it back. $3,000 prize pool, deeper mentorship, same all-nighter energy.
+            Registration is open. Join us September 5–6 at Darul Islah for mentorship, workshops, and a $3,000
+            prize pool — build something real with the community.
           </motion.p>
 
           <motion.div
@@ -242,7 +238,7 @@ export function HeroSection() {
             className="flex flex-col sm:flex-row gap-4"
           >
             <a
-              href="https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+              href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
@@ -253,7 +249,7 @@ export function HeroSection() {
               onClick={scrollToAbout}
               className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
             >
-              Learn More
+              Event Details
             </button>
           </motion.div>
 
@@ -263,7 +259,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="inline-block font-mono text-xs text-forest/80 bg-cream/80 backdrop-blur-sm mt-8 px-2 py-1 tracking-wider"
           >
-            // September 5–6, 2026 · 9 AM–12 PM · Darul Islah Community Center · Registration open
+            // Sept 5–6, 2026 · 9 AM–12 PM · Darul Islah Community Center · Tickets available
           </motion.p>
         </div>
 

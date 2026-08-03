@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 
-const REGISTRATION_URL = "https://www.zeffy.com/en-US/ticketing/hack-di--2026"
+const REGISTRATION_URL = "https://www.zeffy.com/en-US/ticketing/hackdi--2026"
 
 export function RegisterSection() {
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -28,7 +28,7 @@ export function RegisterSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-4xl font-bold text-cream mb-6 tracking-tight"
           >
-            Registration Is Open
+            Get Your Ticket
           </motion.h2>
 
           <motion.div
@@ -39,15 +39,15 @@ export function RegisterSection() {
           >
             <div className="flex items-center gap-2 mb-4">
               <CheckCircle2 className="h-5 w-5 text-coral" />
-              <p className="font-mono text-xs uppercase tracking-wider text-coral">// status: live</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-coral">// registration open</p>
             </div>
 
             <h3 className="text-xl font-bold text-cream mb-4">
               September 5–6, 2026 · 9 AM–12 PM · Teaneck, NJ
             </h3>
             <p className="text-cream/70 mb-8 max-w-xl">
-              Secure your spot for Hack DI 2026 — $3,000 prize pool, mentorship, workshops, and a full weekend of
-              building with the community. Registration is live now.
+              Spots are limited. Register now for Hack DI 2026 — $3,000 in prizes, industry mentors, workshops,
+              and a full weekend of building at Darul Islah.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -57,7 +57,7 @@ export function RegisterSection() {
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center h-11 bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral/80"
               >
-                Register on Zeffy <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                Register Now <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
                 href="mailto:hackathon@darulislah.org"
