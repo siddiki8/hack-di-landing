@@ -19,7 +19,7 @@ const winners = [
     category: "Community mutual aid",
     image: "/images/barakah.jpeg",
     teamImage: "/images/barakahteam.jpeg",
-    team: "Ameer Hassan and Belal Eza",
+    team: "Ameer Hassan and Belal Ezat",
     intro: "Barakah makes everyday help easier to find and coordinate within the Muslim community.",
     paragraphs: [
       "Instead of letting requests get lost in crowded group chats, people can ask for rides, groceries, or other assistance in plain language and get matched with trusted nearby helpers.",
