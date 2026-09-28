@@ -32,7 +32,7 @@ export function DonationSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="text-forest/60 max-w-2xl mb-12"
         >
-          Your donation helps us create an amazing hackathon experience for all participants.
+          Your support helps Hack DI keep bringing builders together around community needs.
         </motion.p>
 
         <motion.div
@@ -48,7 +48,7 @@ export function DonationSection() {
             </div>
             <p className="text-forest/60 text-sm mb-6 max-w-xl">
               Donations are processed through Darul Islah, a 501(c)(3) nonprofit. All contributions are
-              tax-deductible and directly fund the hackathon.
+              tax-deductible and help fund future community build events.
             </p>
             <a
               href="https://www.darulislah.org/donate/"

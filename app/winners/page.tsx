@@ -290,16 +290,16 @@ export default function WinnersPage() {
               </p>
               <p>
                 To our <span className="text-coral font-medium">community, volunteers, and sponsors</span> —
-                Hack DI 2025 happened because of you. See you again in September.
+                Hack DI 2025 happened because of you. The community came together again in 2026.
               </p>
             </div>
 
             <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Link
-                href="/sponsor-info"
+                href="/winners/2026"
                 className="group inline-flex items-center justify-center h-11 bg-coral px-6 font-mono text-xs uppercase tracking-wider text-cream hover:bg-coral/80 transition-colors"
               >
-                Sponsor 2026 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                See 2026 Winners <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/"

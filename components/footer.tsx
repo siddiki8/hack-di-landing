@@ -16,8 +16,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-cream/50 text-sm">
-              A 24-hour hackathon where innovation meets community. Build, learn, and connect with fellow tech
-              enthusiasts.
+              A community hackathon at Darul Islah. Explore the projects and people behind Hack DI 2026.
             </p>
             <Link
               href="https://instagram.com/hackdarulislah"
@@ -33,12 +32,8 @@ export function Footer() {
             <ul className="space-y-2">
               {[
                 { href: "/#about", label: "About" },
-                { href: "/#sponsors", label: "Sponsors" },
-                { href: "/#schedule", label: "Schedule" },
-                { href: "/#faq", label: "FAQ" },
-                { href: "/mentor-signup", label: "Mentor Signup" },
-                { href: "/winners", label: "Winners" },
-                { href: "/sponsor-info", label: "Sponsor Info" },
+                { href: "/winners/2026", label: "2026 Winners" },
+                { href: "/winners", label: "2025 Recap" },
                 { href: "/#donate", label: "Donate" },
               ].map((link) => (
                 <li key={link.href}>

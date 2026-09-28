@@ -3,6 +3,7 @@
 import { useRef, useEffect, useMemo, useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 const TOKEN_POOL = [
   "0x1a3d", "ff4d3b", "hack()", "sudo ", "bash$ ", "def  ", "func ", "true ", "null ", "0xf5f",
@@ -138,10 +139,6 @@ export function HeroSection() {
     }
   }, [isMobile])
 
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-  }
-
   return (
     <section ref={heroRef} className="relative min-h-screen flex items-center bg-cream pt-16 overflow-hidden">
       {/* Base layer */}
@@ -201,13 +198,12 @@ export function HeroSection() {
               <span className="ml-2 font-mono text-[10px] text-forest/40 tracking-wider">bash — 80×24</span>
             </div>
             <div className="px-5 py-5 font-mono text-sm space-y-1">
-              <p className="text-forest/50">$ hack-di tickets --year=2026</p>
-              <p className="text-terminal">✓ Registration is open</p>
+              <p className="text-forest/50">$ hack-di recap --year=2026</p>
+              <p className="text-terminal">✓ Event complete · winners announced</p>
               <p className="text-forest/70">  ├─ dates: <span className="text-forest">Sept 5–6, 2026</span></p>
-              <p className="text-forest/70">  ├─ hours: <span className="text-forest">9 AM – 12 PM next day</span></p>
               <p className="text-forest/70">  ├─ venue: <span className="text-forest">Darul Islah · Teaneck, NJ</span></p>
-              <p className="text-forest/70">  └─ prize_pool: <span className="text-coral">$3,000</span></p>
-              <p className="text-coral mt-2">[OPEN] Claim your spot... <span className="animate-terminal-blink">▊</span></p>
+              <p className="text-forest/70">  └─ podium: <span className="text-coral">Barakah / Awn / Dishd</span></p>
+              <p className="text-coral mt-2">[SHIPPED] Explore the projects below ↓</p>
             </div>
           </motion.div>
 
@@ -227,8 +223,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-forest/70 text-lg max-w-xl mb-8"
           >
-            Registration is open. Join us September 5–6 at Darul Islah for mentorship, workshops, and a $3,000
-            prize pool — build something real with the community.
+            The 2026 build is complete. Meet the teams whose projects made community support and halal food discovery easier to access.
           </motion.p>
 
           <motion.div
@@ -237,20 +232,18 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <a
-              href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/winners/2026"
               className="group inline-flex items-center justify-center h-11 bg-forest px-6 font-mono text-xs uppercase tracking-wider text-cream transition-colors hover:bg-coral"
             >
-              Register Now <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-            <button
-              onClick={scrollToAbout}
+              Meet the Winners <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link
+              href="/winners"
               className="inline-flex items-center justify-center h-11 border border-forest px-6 font-mono text-xs uppercase tracking-wider text-forest transition-colors hover:border-coral hover:text-coral"
             >
-              Event Details
-            </button>
+              2025 Recap
+            </Link>
           </motion.div>
 
           <motion.p
@@ -259,7 +252,7 @@ export function HeroSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="inline-block font-mono text-xs text-forest/80 bg-cream/80 backdrop-blur-sm mt-8 px-2 py-1 tracking-wider"
           >
-            // Sept 5–6, 2026 · 9 AM–12 PM · Darul Islah Community Center · Tickets available
+            // Sept 5–6, 2026 · Darul Islah Community Center · Teaneck, NJ
           </motion.p>
         </div>
 
@@ -271,10 +264,9 @@ export function HeroSection() {
           className="mt-20 flex flex-wrap gap-8"
         >
           {[
-            { value: "27h", label: "Duration" },
-            { value: "$3k", label: "Prize Pool" },
-            { value: "50+", label: "Devs in 2025" },
-            { value: "10+", label: "Mentor Orgs" },
+            { value: "Sept 5–6", label: "Event Dates" },
+            { value: "3", label: "Winning Teams" },
+            { value: "2", label: "Years of Hack DI" },
           ].map((stat) => (
             <div key={stat.label}>
               <p className="font-mono text-2xl font-bold text-forest">{stat.value}</p>

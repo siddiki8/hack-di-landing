@@ -8,10 +8,8 @@ import { cn } from "@/lib/utils"
 
 const navLinks = [
   { href: "/#about", label: "About" },
-  { href: "/mentor-signup", label: "Mentor" },
-  { href: "/sponsor-info", label: "Sponsor" },
-  { href: "/#faq", label: "FAQ" },
-  { href: "/winners", label: "[2025 Recap]", highlight: true as const },
+  { href: "/winners", label: "2025 Recap" },
+  { href: "/#donate", label: "Support" },
 ]
 
 export function Navbar() {
@@ -68,39 +66,30 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={cn(
-                "font-mono text-xs uppercase tracking-wider transition-colors",
-                (link as { highlight?: boolean }).highlight
-                  ? "text-coral hover:text-coral/70"
-                  : "text-forest/80 hover:text-coral",
-              )}
+              className="font-mono text-xs uppercase tracking-wider text-forest/80 transition-colors hover:text-coral"
             >
               {link.label}
             </Link>
           ))}
-          <a
-            href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/winners/2026"
             className="inline-flex h-9 items-center bg-forest px-5 font-mono text-xs uppercase tracking-wider text-cream transition-colors duration-300 hover:bg-coral"
           >
-            Register Now
-          </a>
+            View Winners
+          </Link>
         </nav>
 
         <div className="flex items-center gap-3 md:hidden">
-          <a
-            href="https://www.zeffy.com/en-US/ticketing/hackdi--2026"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/winners/2026"
             className="inline-flex h-9 items-center bg-forest px-4 font-mono text-[11px] uppercase tracking-wider text-cream transition-colors hover:bg-coral"
           >
-            Register
-          </a>
+            Winners
+          </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-forest"
-            aria-label="Toggle menu"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -115,10 +104,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={cn(
-                    "block py-3 font-mono text-xs uppercase tracking-wider hover:text-coral active:text-coral",
-                    (link as { highlight?: boolean }).highlight ? "text-coral" : "text-forest/80",
-                  )}
+                  className="block py-3 font-mono text-xs uppercase tracking-wider text-forest/80 hover:text-coral active:text-coral"
                 >
                   {link.label}
                 </Link>

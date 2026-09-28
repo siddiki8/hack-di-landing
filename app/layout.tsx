@@ -13,7 +13,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Hack DI — darul_islah.hack()",
   description:
-    "A 24-hour hackathon at Darul Islah Teaneck where innovation meets community. Build, learn, and connect with fellow tech enthusiasts.",
+    "Explore the winning projects and teams from Hack DI 2026, a community hackathon at Darul Islah in Teaneck.",
   icons: {
     icon: "/hackdilogo.png",
   },
